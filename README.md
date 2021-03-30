@@ -13,5 +13,5 @@ KRAVLISTA för index.html filen
 8. Vy-3 ska ha valfritt innehåll (exempelvis kontaktuppgifter).
 8. Ska finnas länk till app.html från index.html.
 9. ska finnas CSS-fil.
-[10]. När knapparna hovras över ska de bli större.
+10. När knapparna hovras över ska de bli större.
 11. renderingskoden för vyerna ska finnas i sepparata js-filer.
