@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Haal20/DaylieLearn#readme",
   "dependencies": {
     "bootstrap": "^5.0.0-beta3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
