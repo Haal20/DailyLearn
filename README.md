@@ -1,7 +1,12 @@
 # DaylieLearn
 Classroom application.
 
+clona och installera dependensies
 Run "npm install" in the command prompt to get started.
+kör parsel (man ska kunna gå till localhost: någonting)
+
+
+
 
 #Kravlista
 
