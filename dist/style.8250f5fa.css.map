@@ -1,1 +1,0 @@
-{"version":3,"sources":["src/project_planning/style.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"style.8250f5fa.css","sourceRoot":"..","sourcesContent":["button {\r\n    transition-duration: 0.4s;\r\n}\r\n\r\nbutton:hover {\r\n    font-size: 20px;\r\n    background-color: rgb(184, 126, 212);\r\n}"]}

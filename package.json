@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel app.html --port 1234"
+    "start": "parcel *.html --port 1234"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,7 @@
   },
   "homepage": "https://github.com/Haal20/DaylieLearn#readme",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta3"
-  },
-  "devDependencies": {
-    "parcel": "2.0.x",
+    "parcel": "^2.0.0-beta.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
