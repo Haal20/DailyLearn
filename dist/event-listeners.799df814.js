@@ -186,7 +186,7 @@ var viewContact = document.getElementById('contact'); //Show first page
 viewPlan.addEventListener('click', _planView.renderPlanView);
 viewIdea.addEventListener('click', _ideaView.renderIdeaView);
 viewContact.addEventListener('click', _contactView.renderContactView);
-},{"./home-view.js":"src/project_planning/home-view.js","./plan-view.js":"src/project_planning/plan-view.js","./idea-view.js":"src/project_planning/idea-view.js","./contact-view.js":"src/project_planning/contact-view.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./home-view.js":"src/project_planning/home-view.js","./plan-view.js":"src/project_planning/plan-view.js","./idea-view.js":"src/project_planning/idea-view.js","./contact-view.js":"src/project_planning/contact-view.js"}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -214,7 +214,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58853" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59802" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -390,5 +390,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/project_planning/event-listeners.js"], null)
+},{}]},{},["../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/project_planning/event-listeners.js"], null)
 //# sourceMappingURL=/event-listeners.799df814.js.map
