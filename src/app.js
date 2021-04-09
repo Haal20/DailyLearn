@@ -1,3 +1,7 @@
+// index.js
+import React from "react"
+import ReactDOM from "react-dom"
+
 class App extends React.Component {
     constructor(){
         super();
@@ -19,6 +23,6 @@ class App extends React.Component {
           <button onClick={this.updateMessage} >Click me!</button>
           </div> 
       }
-  }
+}
 
-  ReactDOM.render(<App message="from react with prop" />, document.getElementById('root'))
+ReactDOM.render(<App message="from react with prop" />, document.getElementById('root'))
