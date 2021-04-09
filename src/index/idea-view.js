@@ -1,8 +1,7 @@
 import React from "react"
 
-let HemVy = <img src="./src/index/image/hem-vy.jpg" alt="Hem Vy"></img>
-let GemensamVy = <img src="./src/index/image/gemensamt-vy.jpg" alt="Gemensamt Vy"></img>
-
+const HemVy = <img src="./src/index/image/hem-vy.jpg" alt="Hem Vy"></img>
+const GemensamVy = <img src="./src/index/image/gemensamt-vy.jpg" alt="Gemensamt Vy"></img>
 
 export function renderIdeaView() {
     let main = document.getElementById('main');

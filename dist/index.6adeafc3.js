@@ -1177,24 +1177,24 @@ try {
   var _react = require("react");
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _jsxFileName = "C:\\Users\\alma-\\OneDrive\\Skrivbord\\CampusVarnamo\\Repos\\6.ModernaWebbapplikationer\\DailyLearn\\src\\index\\idea-view.js";
-  let HemVy = /*#__PURE__*/_reactDefault.default.createElement("img", {
+  const HemVy = /*#__PURE__*/_reactDefault.default.createElement("img", {
     src: "./src/index/image/hem-vy.jpg",
     alt: "Hem Vy",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 3,
-      columnNumber: 13
+      columnNumber: 15
     }
   });
-  let GemensamVy = /*#__PURE__*/_reactDefault.default.createElement("img", {
+  const GemensamVy = /*#__PURE__*/_reactDefault.default.createElement("img", {
     src: "./src/index/image/gemensamt-vy.jpg",
     alt: "Gemensamt Vy",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4,
-      columnNumber: 18
+      columnNumber: 20
     }
   });
   function renderIdeaView() {
