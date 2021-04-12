@@ -1,7 +1,7 @@
 {
   "name": "daylielearn",
   "version": "1.0.0",
-  "description": "En innovativ och smart lösning på den bristande studietekniken hos ungdommar på hörstadiet",
+  "description": "En innovativ och smart lösning på den bristande studietekniken hos ungdomar på högstadiet.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
