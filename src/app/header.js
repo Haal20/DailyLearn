@@ -6,6 +6,7 @@ class Header extends React.Component{
             <div className="Header">
             <div><button className="burgerMenu">|||</button></div>
             <h1>Tisdag</h1>
+            <hr></hr>
             </div>
         );
     }
