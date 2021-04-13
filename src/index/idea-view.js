@@ -8,7 +8,7 @@ export function renderIdeaView() {
         <p>Prototypen jag ska bygga under kursen ska vara uppdelad i 3 delar. Den första delen är en "smart" att-göra-lista; den andra är en gemensam månadskarta; den sista är en övrigt-vy som visar samlad information kring hur en förbättrar sina studier.</p>
         `
         let HemVy = document.createElement('img');
-        HemVy.setAttribute("src","./src/index/image/hem-vy.jpg"); 
+        HemVy.setAttribute("src", "./src/index/image/hem-vy.jpg"); 
         HemVy.setAttribute("alt","Hem Vy"); 
         main.appendChild(HemVy);
 

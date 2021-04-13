@@ -19,7 +19,7 @@ källkod:
 6. git-repot ska innehålla samma index.html och app.html, som ska fungera på samma sätt som i tidigare inlämningsuppgift.
 
 app.html:
-[1]. app.html ska renderas med React när den besöks.
+1. app.html ska renderas med React när den besöks.
 [2]. React träd ska bestå av 5 komponenter.
 [3]. komponenterna ska finnas med i källkoden -på github-.
 [4]. React komponenterna är skrivna med JSX.
