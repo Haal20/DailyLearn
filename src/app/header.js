@@ -18,7 +18,7 @@ class Header extends React.Component{
     render() {
         return (
             <div className="Header">
-            <BurgerMenu onClick={this.handleClick} />
+            <BurgerMenu onClick={()=>this.handleClick} />
             <h1>Tisdag</h1>
             <hr></hr>
             </div>
