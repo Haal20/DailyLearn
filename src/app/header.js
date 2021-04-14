@@ -5,31 +5,15 @@ class Header extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            isToggle: false
         };
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
-        console.log('Clicked burger');
-        if(this.state.isToggle == true){
-            this.setState({
-                isToggle: false
-            });    
-        } else {
-        this.setState({
-            isToggle: true
-        });
-    }
-      }
 
 
     render() {
         return (
             <div className="Header">
-                <button onClick={this.handleClick}>
-                    <BurgerMenu isToggle={this.state.isToggle}/>
-                </button>
+                    <BurgerMenu />
             <h1>Tisdag</h1>
             <hr></hr>
             </div>
