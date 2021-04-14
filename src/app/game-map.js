@@ -17,7 +17,7 @@ class GameMap extends React.Component {
     render() {
         return (
             <button onClick={this.props.onClick}>
-                gemensamma
+                gemenskap
             </button>
         );
     }
