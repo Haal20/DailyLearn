@@ -1,11 +1,11 @@
 import React from 'react'
 
 //using bulma for styling
-class BurgerMenu extends React.Component 
-    constructor(props){
+class BurgerMenu extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
-            isToggle: false
+            isToggle: false,
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -85,5 +85,4 @@ class BurgerMenu extends React.Component
         );
     }
 }
-
 export default BurgerMenu
