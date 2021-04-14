@@ -8,37 +8,15 @@ class Footer extends React.Component {
         super(props);
         this.state = {
         };
-        this.toDoList = this.toDoList.bind(this);
-        this.gameMap = this.gameMap.bind(this);
-        this.studyTips = this.studyTips.bind(this);
-    }
-
-    toDoList(){
-        console.log('Clicked Hem');
-        <ToDoList />
-    }
-
-    gameMap(){
-        console.log('Clicked Gemensamma');
-    }
-
-    studyTips(){
-        console.log('Clicked fördjupning');
     }
 
     render() {
         return (
             <div>
                 <hr></hr>
-                <button onClick={this.toDoList}>
-                    hem
-                </button>
-                <button onClick={this.gameMap}>
-                    gemensamma
-                </button>
-                <button onClick={this.studyTips}>
-                    fördjupning
-                </button>
+                <ToDoList />
+                <GameMap />
+                <StudyTips />
             </div>
         );
     }

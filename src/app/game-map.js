@@ -1,12 +1,24 @@
 import React from 'react'
 
 class GameMap extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+
+        };
+        this.gameMap = this.gameMap.bind(this);
+    }
+
+    gameMap(){
+        console.log('Clicked Gemensamma');
+    }
+
+
     render() {
-        console.log('inside game-map.js')
         return (
-            <div>
-               Hello world game-map.js
-            </div>
+            <button onClick={this.gameMap}>
+                gemensamma
+            </button>
         );
     }
 }

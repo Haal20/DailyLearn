@@ -1,12 +1,25 @@
 import React from 'react'
 
 class StudyTips extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+
+        };
+        this.studyTips = this.studyTips.bind(this);
+    }
+
+
+    studyTips(){
+        console.log('Clicked fördjupning');
+    }
+
     render() {
-        console.log('inside study-tips.js')
+
         return (
-            <div>
-               Hello world study-tips.js
-            </div>
+            <button onClick={this.studyTips}>
+                fördjupning
+            </button>
         );
     }
 }

@@ -2,17 +2,20 @@ import React from 'react'
 
 //using bulma for styling
 class BurgerMenu extends React.Component {
+
     render(){
         if (this.props.isToggle == true) {
             return(
                 <div className="navbar">
                     <div className="container">
                         <div className="navbar-brand">
+                           
                             <span className="navbar-burger is-active" data-target="navMenu">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </span>
+                           
                         </div>
                         <div id="navMenu" className="navbar-menu is-active">
                             <div className="navbar-end">

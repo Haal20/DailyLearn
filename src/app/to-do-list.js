@@ -1,12 +1,24 @@
 import React from 'react'
 
 class ToDoList extends React.Component {
+    constructor(props){
+        super(props);
+        this.state= {
+
+        };
+        this.toDoList = this.toDoList.bind(this);
+    }
+
+    toDoList(){
+        console.log('Clicked Hem');
+    }
+
+
     render() {
-        console.log('inside to-do-list.js')
         return (
-            <div>
-                Hello to-do-list.js
-            </div>
+            <button onClick={this.toDoList}>
+                hem
+            </button>
         );
     }
 }

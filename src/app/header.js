@@ -12,7 +12,6 @@ class Header extends React.Component{
 
     handleClick() {
         console.log('Clicked burger');
-        //isToggle=true otherwise isToggle=false
         if(this.state.isToggle == true){
             this.setState({
                 isToggle: false
