@@ -15,12 +15,13 @@ class Footer extends React.Component {
 
     toDoList(){
         console.log('Clicked Hem');
+        <ToDoList />
     }
 
     gameMap(){
         console.log('Clicked Gemensamma');
     }
-    
+
     studyTips(){
         console.log('Clicked fördjupning');
     }

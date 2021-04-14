@@ -2,9 +2,10 @@ import React from 'react'
 
 class ToDoList extends React.Component {
     render() {
+        console.log('inside to-do-list.js')
         return (
             <div>
-               Hello world
+                Hello to-do-list.js
             </div>
         );
     }
