@@ -1,7 +1,7 @@
 import React from 'react'
 
 //using bulma for styling
-class BurgerMenu extends React.Component {
+class BurgerMenu extends React.Component 
     constructor(props){
         super(props);
         this.state = {
@@ -28,6 +28,7 @@ class BurgerMenu extends React.Component {
 
 
 
+
     render(){
         if (this.state.isToggle == true) {
             return(
@@ -35,13 +36,17 @@ class BurgerMenu extends React.Component {
                     <div className="container">
                         <div className="navbar-brand">
 
+
                         <button onClick={this.handleClick}>
+
                             <span className="navbar-burger is-active" data-target="navMenu">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </span>
+
                         </button>
+
 
                         </div>
                         <div id="navMenu" className="navbar-menu is-active">
