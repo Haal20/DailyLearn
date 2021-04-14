@@ -13,7 +13,7 @@ class Header extends React.Component{
     render() {
         return (
             <div className="Header">
-                    <BurgerMenu />
+                <BurgerMenu />
             <h1>Tisdag</h1>
             <hr></hr>
             </div>

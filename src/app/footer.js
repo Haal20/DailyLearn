@@ -14,9 +14,7 @@ class Footer extends React.Component {
         return (
             <div>
                 <hr></hr>
-                <ToDoList />
-                <GameMap />
-                <StudyTips />
+                {this.props.children}
             </div>
         );
     }

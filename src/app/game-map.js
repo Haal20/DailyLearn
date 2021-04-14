@@ -16,7 +16,7 @@ class GameMap extends React.Component {
 
     render() {
         return (
-            <button onClick={this.gameMap}>
+            <button onClick={this.props.onClick}>
                 gemensamma
             </button>
         );

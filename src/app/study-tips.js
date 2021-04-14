@@ -17,7 +17,7 @@ class StudyTips extends React.Component {
     render() {
 
         return (
-            <button onClick={this.studyTips}>
+            <button onClick={this.props.onClick}>
                 fördjupning
             </button>
         );

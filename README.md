@@ -30,7 +30,7 @@ Parsel will transpile the code outomagicaly when you run "npm start". This becau
 3. komponenterna ska finnas med i källkoden -på github-.
 4. React komponenterna är skrivna med JSX.
 5. 2 komponenter ska hantera event -ex. från användaren-.
-[6]. 2 komponenter ska hantera state -rendera tillståndsbaserad information-.
+6. 2 komponenter ska hantera state -rendera tillståndsbaserad information-.
 [7]. 1 komponent hanterarLifecycle hook -för att påverka annan komponenst tillstånd-.
 [8]. via 1 komponent ska användare kunna spara information i LocalStorage.
 [9]. Information i LocalStorage används vid rendering av React-trädet.

@@ -10,8 +10,6 @@ class BurgerMenu extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-
-
     handleClick() {
         console.log('Clicked burger');
             if(this.state.isToggle == true){
@@ -19,15 +17,11 @@ class BurgerMenu extends React.Component {
                     isToggle: false
                 });    
             } else {
-                
                 this.setState({
                     isToggle: true
                 });    
         }
     }
-
-
-
 
     render(){
         if (this.state.isToggle == true) {
@@ -36,17 +30,13 @@ class BurgerMenu extends React.Component {
                     <div className="container">
                         <div className="navbar-brand">
 
-
                         <button onClick={this.handleClick}>
-
                             <span className="navbar-burger is-active" data-target="navMenu">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </span>
-
                         </button>
-
 
                         </div>
                         <div id="navMenu" className="navbar-menu is-active">

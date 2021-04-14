@@ -4,7 +4,6 @@ class ToDoList extends React.Component {
     constructor(props){
         super(props);
         this.state= {
-
         };
         this.toDoList = this.toDoList.bind(this);
     }
@@ -16,7 +15,7 @@ class ToDoList extends React.Component {
 
     render() {
         return (
-            <button onClick={this.toDoList}>
+            <button onClick={this.props.onClick}>
                 hem
             </button>
         );

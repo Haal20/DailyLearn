@@ -4,7 +4,7 @@ class Main extends React.Component {
     render() {
         return (
             <div className="main">
-                Rendering goes HERE
+            Render HERE
             </div>
         );
     }
