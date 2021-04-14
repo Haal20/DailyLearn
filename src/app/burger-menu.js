@@ -3,7 +3,7 @@ import React from 'react'
 //using bulma for styling
 class BurgerMenu extends React.Component {
     render(){
-        if (/*toggle=true*/ false) {
+        if (this.props.isToggle == true) {
             return(
                 <div className="navbar">
                     <div className="container">
