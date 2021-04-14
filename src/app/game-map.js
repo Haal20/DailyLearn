@@ -6,11 +6,7 @@ class GameMap extends React.Component {
         this.state = {
 
         };
-        this.gameMap = this.gameMap.bind(this);
-    }
-
-    gameMap(){
-        console.log('Clicked Gemensamma');
+        
     }
 
 

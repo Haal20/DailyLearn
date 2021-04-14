@@ -23,9 +23,9 @@ export class App extends React.Component {
             <Main view = {this.state.view} />
 
             <Footer> 
-              <ToDoList onClick={()=> this.setState({ view: 'toDoViwe' })}/>
-              <GameMap  onClick={()=> this.setState({ view: 'gameMapViwe' })}/>
-              <StudyTips onClick={()=> this.setState({ view: 'studyTipsViwe' })}/> 
+              <ToDoList onClick={()=> this.setState({ view: 'toDoView' })}/>
+              <GameMap  onClick={()=> this.setState({ view: 'gameMapView' })}/>
+              <StudyTips onClick={()=> this.setState({ view: 'studyTipsView' })}/> 
             </Footer>
           </div>
           );

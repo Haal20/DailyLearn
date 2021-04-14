@@ -5,11 +5,7 @@ class ToDoList extends React.Component {
         super(props);
         this.state= {
         };
-        this.toDoList = this.toDoList.bind(this);
-    }
-
-    toDoList(){
-        console.log('Clicked Hem');
+        
     }
 
 

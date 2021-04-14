@@ -6,13 +6,10 @@ class StudyTips extends React.Component {
         this.state = {
 
         };
-        this.studyTips = this.studyTips.bind(this);
     }
 
 
-    studyTips(){
-        console.log('Clicked fördjupning');
-    }
+    
 
     render() {
 
