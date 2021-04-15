@@ -1,7 +1,4 @@
 import React from 'react'
-import ToDoList from './to-do-list.js'
-import GameMap from './game-map.js'
-import StudyTips from './study-tips.js'
 
 class Footer extends React.Component {
     constructor(props){
@@ -12,7 +9,7 @@ class Footer extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="footerContent">
                 <hr></hr>
                 {this.props.children}
             </div>

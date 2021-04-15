@@ -1,6 +1,9 @@
 # DaylieLearn
 Classroom application.
+This application is only designed for mobile use. Please have that in mind if 
+viewing on a bif screen device.
 
+#Getting started
 Clone the repository by copying the HTTPS adress on the projects GitHub page.
 Choose a map to store the projekt in; right click the map and choose "git bacth here".
 Your terminalwindow should now be open.
@@ -33,6 +36,6 @@ Parsel will transpile the code outomagicaly when you run "npm start". This becau
 6. 2 komponenter ska hantera state -rendera tillståndsbaserad information-.
 [7]. 1 komponent hanterarLifecycle hook -för att påverka annan komponents tillstånd-.
 8. via 1 komponent ska användare kunna spara information i LocalStorage.
-[9]. Information i LocalStorage används vid rendering av React-trädet.
+9. Information i LocalStorage används vid rendering av React-trädet.
 10. I app.html används egen css eller ett bibliotek för att ge kompnenter stil och form.
 [11]. I app.html används egen css för att ge komponenter rörelse.

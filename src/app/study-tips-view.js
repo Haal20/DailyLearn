@@ -22,6 +22,11 @@ class StudyTipsView extends React.Component {
     localStorage.setItem('localString', localString);
   }
 
+  componentDidMount() {
+    const localData = localStorage.getItem('localString');
+    this.setState({localStorageData: localData });
+  }
+
     render() {
       return (
         <div>
@@ -34,7 +39,7 @@ class StudyTipsView extends React.Component {
             <button type="submit">Spara Sträng</button>
           </form>
           <div>
-            Du sparade: <br /> Sparat stuff renderas HÄR
+            Du sparade: <br /> {this.state.localStorageData}
           </div>
         </div>
       );
