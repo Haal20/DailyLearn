@@ -7,11 +7,10 @@ class GameMap extends React.Component {
         };
     }
 
-
     render() {
         return (
             <button onClick={this.props.onClick}>
-                gemenskap
+               gemenskap
             </button>
         );
     }

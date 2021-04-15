@@ -17,7 +17,6 @@ class StudyTipsView extends React.Component {
   }
 
   handleFormSubmit() {
-    console.log('handleFormSubmit');
     const localString = this.state.localString;
     localStorage.setItem('localString', localString);
   }
