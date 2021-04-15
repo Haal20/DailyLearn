@@ -1,12 +1,11 @@
 import React from 'react'
+import image from 'url:./images/map.png'
 
 class GameMapView extends React.Component {
     render() {
       return (
         <div>
-          <h2>Game Map</h2>
-          <br />
-          Här ska bilden på kartan vara
+          <img src={image} />
         </div>
       );
     }

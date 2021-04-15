@@ -25,7 +25,7 @@ class StudyTipsView extends React.Component {
     render() {
       return (
         <div>
-          <h2>Study Tips: Spara något i LocalStorage och skriv ut</h2>
+          <h2>Spara något i LocalStorage och skriv ut</h2>
           <br />
           <form onSubmit={this.handleFormSubmit}>
             <label>
@@ -33,6 +33,9 @@ class StudyTipsView extends React.Component {
             </label>
             <button type="submit">Spara Sträng</button>
           </form>
+          <div>
+            Du sparade: <br /> Sparat stuff renderas HÄR
+          </div>
         </div>
       );
     }
