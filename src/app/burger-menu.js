@@ -55,7 +55,7 @@ class BurgerMenu extends React.Component {
         <div className="navbar">
             <div className="container">
                 <div className="navbar-brand">
-                <button onClick={this.handleClick}>
+                <button className="burgerBtn" onClick={this.handleClick}>
                     <span className="navbar-burger" data-target="navMenu">
                         <span></span>
                         <span></span>

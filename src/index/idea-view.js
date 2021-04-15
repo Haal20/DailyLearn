@@ -8,7 +8,7 @@ export function renderIdeaView() {
         <p>Prototypen jag ska bygga under kursen ska vara uppdelad i 3 delar. Den första delen är en "smart" att-göra-lista; den andra är en gemensam månadskarta; den sista är en övrigt-vy som visar samlad information kring hur en förbättrar sina studier.</p>
         `
         let HemVy = document.createElement('img');
-        HemVy.setAttribute("src", "./src/index/image/hem-vy.jpg"); 
+        HemVy.setAttribute("src", "url:./image/hem-vy.png"); 
         HemVy.setAttribute("alt","Hem Vy"); 
         main.appendChild(HemVy);
 
@@ -17,7 +17,7 @@ export function renderIdeaView() {
         Det finns även en visuell representation av de studerade timmarna i form av en "bar" som fylls utefter procent avklarade minuter. Till sist har vi också till höger i uppgifts-objektet en liten sammanfattning som visar hur det gått att studera de senaste dagarna. fylls plutten i så betyder det att alla rekomenderade studietimmar är laggda.</p><br />
         `
         let GemensamVy = document.createElement('img');
-        GemensamVy.setAttribute("src","./src/index/image/gemensamt-vy.jpg"); 
+        GemensamVy.setAttribute("src","url:./image/gemensamt-vy.png"); 
         GemensamVy.setAttribute("alt","Gemensamt Vy"); 
         main.appendChild(GemensamVy);
         
