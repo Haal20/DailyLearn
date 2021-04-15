@@ -34,7 +34,7 @@ Parsel will transpile the code outomagicaly when you run "npm start". This becau
 4. React komponenterna är skrivna med JSX.
 5. 2 komponenter ska hantera event -ex. från användaren-.
 6. 2 komponenter ska hantera state -rendera tillståndsbaserad information-.
-[7]. 1 komponent hanterarLifecycle hook -för att påverka annan komponents tillstånd-.
+[7]. 1 komponent hanterarLifecycle hook -för att påverka annan komponents tillstånd-. TROR JAG GÖR DET; INTE SÄKER
 8. via 1 komponent ska användare kunna spara information i LocalStorage.
 9. Information i LocalStorage används vid rendering av React-trädet.
 10. I app.html används egen css eller ett bibliotek för att ge kompnenter stil och form.
