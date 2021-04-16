@@ -9,8 +9,10 @@ class ToDoList extends React.Component {
 
     render() {
         return (
-            <button onClick={this.props.onClick}>
-                hem
+            <button className="button" onClick={this.props.onClick}>
+                <span className="icon">
+                <i className="fas fa-home">Hem</i>
+                </span>
             </button>
         );
     }

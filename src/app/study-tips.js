@@ -10,8 +10,10 @@ class StudyTips extends React.Component {
     render() {
 
         return (
-            <button onClick={this.props.onClick}>
-                fördjupning
+            <button className="button" onClick={this.props.onClick}>
+                <span className="icon">
+                <i className="fas fa-home">Mer</i>
+                </span>
             </button>
         );
     }

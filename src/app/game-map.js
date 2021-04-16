@@ -9,8 +9,10 @@ class GameMap extends React.Component {
 
     render() {
         return (
-            <button onClick={this.props.onClick}>
-               gemenskap
+            <button className="button" onClick={this.props.onClick}>
+                <span className="icon">
+               <i class="fas fa-user-friends">Spel</i>
+               </span>
             </button>
         );
     }
