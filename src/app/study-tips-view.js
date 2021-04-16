@@ -11,7 +11,7 @@ class StudyTipsView extends React.Component {
   }
 
   handleChange(e) {
-    e.preventDefault();
+    
     const input = e.target.value;
     this.setState({localString: input});
   }
@@ -19,10 +19,12 @@ class StudyTipsView extends React.Component {
   handleFormSubmit() {
     const localString = this.state.localString;
     localStorage.setItem('localString', localString);
+    this.setState({localStorageData: localString });
+    this.setState({localString: ''})
   }
 
   componentDidMount() {
-    const localData = localStorage.getItem('localString');
+    let localData = localStorage.getItem('localString');
     this.setState({localStorageData: localData });
   }
 
@@ -33,7 +35,7 @@ class StudyTipsView extends React.Component {
           <br />
           <form onSubmit={this.handleFormSubmit}>
             <label>
-            Spara LocalString: <br/> <input value={this.state.localString} onChange={this.handleChange} />
+            Spara LocalString: <br/> <input placeholder="Något du vill spara..." value={this.state.localString} onChange={this.handleChange} />
             </label>
             <button type="submit">Spara Sträng</button>
           </form>
