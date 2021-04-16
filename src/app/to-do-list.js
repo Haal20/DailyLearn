@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 class ToDoList extends React.Component {
     constructor(props){
@@ -9,9 +11,9 @@ class ToDoList extends React.Component {
 
     render() {
         return (
-            <button className="button" onClick={this.props.onClick}>
+            <button className="button is-large" onClick={this.props.onClick}>
                 <span className="icon">
-                <i className="fas fa-home">Hem</i>
+                <FontAwesomeIcon icon={faHome} />
                 </span>
             </button>
         );

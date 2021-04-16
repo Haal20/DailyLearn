@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 
 class GameMap extends React.Component {
     constructor(props){
@@ -9,9 +11,9 @@ class GameMap extends React.Component {
 
     render() {
         return (
-            <button className="button" onClick={this.props.onClick}>
+            <button className="button is-large" onClick={this.props.onClick}>
                 <span className="icon">
-               <i class="fas fa-user-friends">Spel</i>
+                <FontAwesomeIcon icon={faUserFriends} />
                </span>
             </button>
         );

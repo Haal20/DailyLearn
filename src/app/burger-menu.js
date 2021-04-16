@@ -1,4 +1,8 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
+import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons'
 
 //using bulma for styling
 class BurgerMenu extends React.Component {
@@ -41,9 +45,9 @@ class BurgerMenu extends React.Component {
                         </div>
                         <div id="navMenu" className="navbar-menu is-active">
                             <div className="navbar-end">
-                                <a href="#" className="navbar-item">Om oss</a>
-                                <a href="#" className="navbar-item">Profil</a>
-                                <a href="#" className="navbar-item">Lärarkontakter</a>
+                                <a href="#" className="navbar-item"><FontAwesomeIcon icon={faAddressCard} /> Om oss</a>
+                                <a href="#" className="navbar-item"><FontAwesomeIcon icon={faUserCircle} /> Profil</a>
+                                <a href="#" className="navbar-item"><FontAwesomeIcon icon={faChalkboardTeacher} /> Lärarkontakter</a>
                             </div>
                         </div>
                     </div>
