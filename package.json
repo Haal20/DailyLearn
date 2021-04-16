@@ -1,25 +1,32 @@
 {
   "name": "daylielearn",
   "version": "1.0.0",
-  "description": "classroom application",
+  "description": "En innovativ och smart lösning på den bristande studietekniken hos ungdomar på högstadiet.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel *.html --port 1234"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Haal20/DaylieLearn.git"
   },
-  "author": "",
+  "author": "Alma Härlin den allsmäktige",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Haal20/DaylieLearn/issues"
   },
   "homepage": "https://github.com/Haal20/DaylieLearn#readme",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta3"
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "bulma": "^0.9.2",
+    "parcel": "^2.0.0-beta.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "@parcel/transformer-image": "^2.0.0-beta.2"
   }
 }
