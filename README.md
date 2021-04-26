@@ -1,4 +1,4 @@
-# DaylieLearn
+# DaylieLearn 
 Classroom application.
 This application is only designed for mobile use. Please have that in mind if 
 viewing on a big screen device.
