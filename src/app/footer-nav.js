@@ -11,7 +11,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 //Import the views
-import ToDoList from './to-do-view'
+import ToDoList from './todo/to-do-view'
 import GameMap from './game-map-view'
 import StudyTips from './study-tips-view'
 
