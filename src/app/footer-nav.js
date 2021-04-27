@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
     Link
@@ -15,7 +15,7 @@ import ToDoList from './to-do-view'
 import GameMap from './game-map-view'
 import StudyTips from './study-tips-view'
 
-class Footer extends React.Component{
+class FooterNav extends React.Component{
     render(){
         return(
             <Router>
@@ -67,4 +67,4 @@ class Footer extends React.Component{
     }
 }
 
-export default Footer
+export default FooterNav

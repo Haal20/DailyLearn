@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Header from './header.js'
-import Footer from './footer.js'
+import FooterNav from './footer-nav.js'
+import BurgerNav from './burger-nav.js';
 
 export class App extends React.Component {
   render() {
       return ( 
           <div>
-            <Header />
-            <Footer /> 
+            <BurgerNav />
+            <FooterNav /> 
           </div>
           );
       }
