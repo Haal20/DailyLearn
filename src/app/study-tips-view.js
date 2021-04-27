@@ -6,12 +6,12 @@ class StudyTipsView extends React.Component {
     this.state = {
       localString:''
     };
+    //save string LocalStorage
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    
     const input = e.target.value;
     this.setState({localString: input});
   }
