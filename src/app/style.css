@@ -1,14 +1,13 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 
-.mainContent {
+.footerContent {
     text-align: center;
 }
 
-.footerContent {
+.footerNav {
     text-align: center;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-
 }

@@ -1,32 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Header from './header.js'
-import Main from './main.js'
-import Footer from './footer.js'
-import ToDoList from './to-do-list.js'
-import GameMap from './game-map.js'
-import StudyTips from './study-tips.js'
+import FooterNav from './footer-nav.js'
+import BurgerNav from './burger-nav.js';
 
 export class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      view: 'toDoView'
-    };
-  }
-
-
   render() {
       return ( 
           <div>
-            <Header />
-            <Main view = {this.state.view} />
-
-            <Footer> 
-              <ToDoList onClick={()=> this.setState({ view: 'toDoView' })}/>
-              <GameMap  onClick={()=> this.setState({ view: 'gameMapView' })}/>
-              <StudyTips onClick={()=> this.setState({ view: 'studyTipsView' })}/> 
-            </Footer>
+            <BurgerNav />
+            <FooterNav /> 
           </div>
           );
       }
