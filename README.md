@@ -43,8 +43,13 @@ VARFÖR: för att göra det möjligt att koda med react-komponenter, JSX samt re
 Parcel/transformer-image finns för att kunna importera bilder i applikationen 
 
 #TJÄNSTER
-Lista och förklara API:er som används, vart i koden och varför.
+API:et:
+https://jsonplaceholder.typicode.com/users
+Är ett API fyllt med mock-data av olika slag.
+Jag använder API:et för att ha en databas med användare att testa fetchanrop med i min applikation. Tanken är att denna senare ska bytas ut till en databas med riktiga användare.
+Jag användet API:et i users.js rad 14 för att hämta en användare beroende på inmatat id.
 
 TODO: 
 [1] Kolla att instruktionerna stämmer(och fungerar!) här i README.
 [2] Kolla att listan med externa bibliotek stämmer.
+[3] Kolla så att de externa tjänsterna stämmer.

@@ -24,7 +24,7 @@ class FooterNav extends React.Component{
                     <div className="footerContent">
                     <Switch>
                         <Route path='/home'>
-                            <ToDoList/>
+                            <ToDoList todos={this.props.todos} />
                         </Route>
                         <Route path='/gameMap'>
                             <GameMap/>

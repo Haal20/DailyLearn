@@ -1,11 +1,13 @@
 import React from 'react'
-import Users from './users';
+import {POSTtodo, GETtodo} from '../logic/todos'
+import ToDoObject from './to-do-object';
 
 class ToDoView extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      userId: ''
+      toDoInput: '',
+      todo: []
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -13,29 +15,55 @@ class ToDoView extends React.Component {
 
   handleChange(e) {
     const input = e.target.value;
-    this.setState({userId: input});
+    this.setState({toDoInput: input});
   }
 
+  //Async?Await?
   handleFormSubmit() {
-    const userId = this.state.userId
-    this.setState({userId: userId});
+    //PostOne
+    POSTtodo(this.state.toDoInput);
+
+    // TODO: Move fetch to logic/todos.js
+    fetch(`https://jsonplaceholder.typicode.com/todos/${this.state.toDoInput}`)
+    .then(response => response.json())
+    .then(data => {
+        this.setState({todo: data});
+    })
+    // TODO: If not '' do Get
+    //GETtodo(this.state.toDoInput); 
+
+    //Clears Placeholder in input
+    this.setState({toDoInput: ''});
+  }
+
+  componentDidMount(){
   }
 
     render() {
+      const todos = this.props.todos;
       return (
         <div>
-        <h2>Hämta lagrad användare med id (finns med id 0-9)</h2>
-        <br/>
+          Hämta att-göra med id (nummer mellan 1-198):
         <form onSubmit={this.handleFormSubmit}>
           <label>
-          Hämta användare: <br/> <input placeholder="Användare du vill hämta..." value={this.state.userId} onChange={this.handleChange} />
+           <input placeholder="Skriv att-göra..." value={this.state.toDoInput} onChange={this.handleChange} />
           </label>
-          <button type="submit">Hämta användare</button>
+          <button type="submit">Skapa att-göra</button>
         </form>
-        Här ska en användare beroende på Id visas
+        Att-göra du hämtade: 
         <br/>
-        {this.state.userId} 
-        <Users userId={this.state.userId} />
+        <ul>
+          <ToDoObject todo={this.state.todo}/>
+        </ul>
+        <br/>
+        <br/>
+        <div>
+        <ul>
+            {todos.map(todo => 
+                <ToDoObject todo={todo}/>
+            )}
+        </ul>
+    </div>
         </div>
       );
     }
