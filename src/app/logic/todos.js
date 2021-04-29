@@ -2,36 +2,29 @@ import React from 'react'
 
 // TODO: function for posting to REST API
 
-export function POSTtodo(toDoName) {
+export async function POSTtodo(toDoName) {
 
-    fetch( { 
+    const newToDoObj = {
+        title: toDoName,
+        userId: 1,
+        completed: false
+    };
+    
+    console.log('title: ' + newToDoObj.title);
+    console.log('userId: ' + newToDoObj.userId);
+    console.log('completed: ' + newToDoObj.completed);
+
+    await fetch( { 
         url:'https://retoolapi.dev/T5kUZD/todos/', 
-        method: 'post',
-        body: {toDoName}
-        })
-  }
+        method: 'POST',
+        body: {newToDoObj}
+        });
+}
 
-export function GETtodo(toDoId) {
+export async function GETtodo(toDoId) {
 
-    console.log('toDoId: ' + toDoId);
+    const res = await fetch(`https://retoolapi.dev/T5kUZD/todos/${toDoId}`);
+    const data = await res.json();
 
-    fetch(`https://retoolapi.dev/T5kUZD/todos/${toDoId}`)
-    .then(response => response.json())
-    .then(data => {
-        console.log('id: ' + data.id);
-        console.log('title: ' + data.title);
-        console.log('completed: ' + data.completed);
-        console.log('data: ' + data);
-
-        // TODO: Return fetched object
-
-        const obj = {
-            id: data.id,
-            title: data.title,
-            completed: data.completed
-        };
-        console.log('object: ' + obj);
-        
-        return obj;
-    })
+    return data
   }

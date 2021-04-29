@@ -7,10 +7,14 @@ class ToDoView extends React.Component {
     super(props);
     this.state = {
       toDoInput: '',
+      postToDoInput: '',
       todo: []
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+
+    this.POSTFormSubmit = this.POSTFormSubmit.bind(this);
+    this.handlePOSTChange = this.handlePOSTChange.bind(this);
   }
 
   handleChange(e) {
@@ -18,25 +22,25 @@ class ToDoView extends React.Component {
     this.setState({toDoInput: input});
   }
 
-  //Async?Await?
-  handleFormSubmit() {
-    //PostOne
-    POSTtodo(this.state.toDoInput);
-
-    // TODO: Move fetch to logic/todos.js
-    fetch(`https://retoolapi.dev/T5kUZD/todos/${this.state.toDoInput}`)
-    .then(response => response.json())
-    .then(data => {
-        this.setState({todo: data});
-    })
-    // TODO: If not '' do Get
-    GETtodo(this.state.toDoInput); 
-
+  async handleFormSubmit() {
+    // Gets a singel todo Object
+    const todoObj = await GETtodo(this.state.toDoInput);
+    this.setState({todo: todoObj});
     //Clears Placeholder in input
     this.setState({toDoInput: ''});
   }
 
-  componentDidMount(){
+
+  handlePOSTChange(e) {
+    const input = e.target.value;
+    this.setState({postToDoInput: input});
+  }
+
+  async POSTFormSubmit() {
+    //PostOne
+    await POSTtodo(this.state.postToDoInput);
+    //Clears Placeholder in input
+    this.setState({postToDoInput: ''});
   }
 
     render() {
@@ -46,9 +50,9 @@ class ToDoView extends React.Component {
           Hämta att-göra med id (nummer mellan 1-25):
         <form onSubmit={this.handleFormSubmit}>
           <label>
-           <input placeholder="Skriv att-göra..." value={this.state.toDoInput} onChange={this.handleChange} />
+           <input placeholder="Skriv id..." value={this.state.toDoInput} onChange={this.handleChange} />
           </label>
-          <button type="submit">Skapa att-göra</button>
+          <button type="submit">Hämta att-göra</button>
         </form>
         Att-göra du hämtade: 
         <br/>
@@ -56,6 +60,15 @@ class ToDoView extends React.Component {
           <ToDoObject todo={this.state.todo}/>
         </ul>
         <br/>
+
+        Skapa ny att-göra (skriv vad som behövs göras)
+        <form onSubmit={this.POSTFormSubmit}>
+          <label>
+           <input placeholder="Skriv att-göra..." value={this.state.postToDoInput} onChange={this.handlePOSTChange} />
+          </label>
+          <button type="submit">Skapa att-göra</button>
+        </form>
+
         <br/>
         <div>
         <ul>
