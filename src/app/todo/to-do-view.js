@@ -24,13 +24,13 @@ class ToDoView extends React.Component {
     POSTtodo(this.state.toDoInput);
 
     // TODO: Move fetch to logic/todos.js
-    fetch(`https://jsonplaceholder.typicode.com/todos/${this.state.toDoInput}`)
+    fetch(`https://retoolapi.dev/T5kUZD/todos/${this.state.toDoInput}`)
     .then(response => response.json())
     .then(data => {
         this.setState({todo: data});
     })
     // TODO: If not '' do Get
-    //GETtodo(this.state.toDoInput); 
+    GETtodo(this.state.toDoInput); 
 
     //Clears Placeholder in input
     this.setState({toDoInput: ''});
@@ -43,7 +43,7 @@ class ToDoView extends React.Component {
       const todos = this.props.todos;
       return (
         <div>
-          Hämta att-göra med id (nummer mellan 1-198):
+          Hämta att-göra med id (nummer mellan 1-25):
         <form onSubmit={this.handleFormSubmit}>
           <label>
            <input placeholder="Skriv att-göra..." value={this.state.toDoInput} onChange={this.handleChange} />

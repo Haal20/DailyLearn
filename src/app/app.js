@@ -13,7 +13,7 @@ export class App extends React.Component {
   }
 
   componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/todos')
+    fetch('https://retoolapi.dev/T5kUZD/todos')
     .then(response => response.json())
     .then(data => {
         this.setState({todos: data});
