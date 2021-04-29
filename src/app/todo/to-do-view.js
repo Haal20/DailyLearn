@@ -38,7 +38,10 @@ class ToDoView extends React.Component {
 
   async POSTFormSubmit() {
     //PostOne
-    await POSTtodo(this.state.postToDoInput);
+    await POSTtodo(this.state.postToDoInput)
+    .then(data => {
+      console.log('postData: ' + data);
+    });
     //Clears Placeholder in input
     this.setState({postToDoInput: ''});
   }

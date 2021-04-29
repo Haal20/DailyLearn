@@ -44,10 +44,10 @@ Parcel/transformer-image finns för att kunna importera bilder i applikationen
 
 #TJÄNSTER
 API:et:
-https://jsonplaceholder.typicode.com/users
+https://retoolapi.dev/T5kUZD/todos
 Är ett API fyllt med mock-data av olika slag.
-Jag använder API:et för att ha en databas med användare att testa fetchanrop med i min applikation. Tanken är att denna senare ska bytas ut till en databas med riktiga användare.
-Jag användet API:et i users.js rad 14 för att hämta en användare beroende på inmatat id.
+Jag använder API:et för att ha en databas med todos att testa fetchanrop med i min applikation. Tanken är att denna senare ska bytas ut till en databas med riktig todo information.
+Jag använder API:et i TODO: rad TODO: för att hämta en användare beroende på inmatat id.
 
 TODO: 
 [1] Kolla att instruktionerna stämmer(och fungerar!) här i README.
