@@ -1,6 +1,6 @@
 import React from 'react'
 
-class StudyTipsView extends React.Component {
+export class StudyTipsView extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -45,6 +45,6 @@ class StudyTipsView extends React.Component {
         </div>
       );
     }
-  }
+}
    
-  export default StudyTipsView;
+  

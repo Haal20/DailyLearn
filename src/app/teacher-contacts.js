@@ -1,6 +1,6 @@
 import React from 'react'
 
-class TeacherContacts extends React.Component {
+export class TeacherContacts extends React.Component {
     render() {
       return (
         <div>
@@ -9,5 +9,3 @@ class TeacherContacts extends React.Component {
       );
     }
   }
-   
-  export default TeacherContacts

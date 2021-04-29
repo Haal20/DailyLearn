@@ -11,11 +11,11 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons'
 //view for nav
-import AboutUs from './about-us'
-import Profil from './profil'
-import TeacherContacts from './teacher-contacts'
+import { AboutUs } from './about-us.js'
+import { Profil } from './profil.js'
+import { TeacherContacts } from './teacher-contacts.js'
 
-class BurgerNav extends React.Component {
+export class BurgerNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -114,4 +114,3 @@ class BurgerNav extends React.Component {
         );
     }
 }
-export default BurgerNav

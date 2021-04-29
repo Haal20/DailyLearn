@@ -1,8 +1,8 @@
 import React from 'react'
 import {POSTtodo, GETtodo} from '../logic/todos'
-import ToDoObject from './to-do-object';
+import {ToDoObject} from './to-do-object';
 
-class ToDoView extends React.Component {
+export class ToDoView extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -80,6 +80,4 @@ class ToDoView extends React.Component {
         </div>
       );
     }
-  }
-   
-  export default ToDoView
+}

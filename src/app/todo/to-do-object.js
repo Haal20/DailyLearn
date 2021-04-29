@@ -1,6 +1,6 @@
 import React from 'react'
 
-class ToDoObject extends React.Component {
+export class ToDoObject extends React.Component {
     constructor(props){
         super(props);
         this.state ={
@@ -18,6 +18,4 @@ class ToDoObject extends React.Component {
             </div>
         );
     }
-  }
-   
-  export default ToDoObject
+}

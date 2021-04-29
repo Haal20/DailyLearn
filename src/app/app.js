@@ -1,16 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import FooterNav from './footer-nav.js'
-import BurgerNav from './burger-nav.js';
-import {GETtodos, GETtodo} from './logic/todos.js'
-import {HashRouter} from "react-router-dom"
+import  ReactDOM from 'react-dom'
+import { FooterNav } from './footer-nav.js'
+import { BurgerNav } from './burger-nav.js';
+import { GETtodos } from './logic/todos.js'
+import { HashRouter } from "react-router-dom"
 
 export class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       todos: [],
-      todoObj: []
     };
   }
 
@@ -22,9 +21,11 @@ export class App extends React.Component {
   render() {
       return ( 
           <div>
+        
               <BurgerNav />
               <FooterNav todos={this.state.todos}>
               </FooterNav>
+         
           </div>
           );
       }
