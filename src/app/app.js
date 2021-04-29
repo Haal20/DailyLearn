@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import FooterNav from './footer-nav.js'
 import BurgerNav from './burger-nav.js';
-import ToDo from './logic/todos'
+import {GETtodos} from './logic/todos.js'
 
 export class App extends React.Component {
   constructor(props){
@@ -12,13 +12,9 @@ export class App extends React.Component {
     };
   }
 
-  componentDidMount(){
-    fetch('https://retoolapi.dev/T5kUZD/todos')
-    .then(response => response.json())
-    .then(data => {
-        this.setState({todos: data});
-    })
-
+  async componentDidMount(){
+    const todos = await GETtodos();
+    this.setState({todos});
 }
 
   render() {

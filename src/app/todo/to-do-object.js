@@ -10,7 +10,7 @@ class ToDoObject extends React.Component {
     render() {
         return (
             <div>
-                <li key={this.props.todo.id}>
+                <li>
                     id: {this.props.todo.id}<br/>
                     title: {this.props.todo.title}<br/>
                     completed: {this.props.todo.completed? 'ja':'nej'}<br/><br/>

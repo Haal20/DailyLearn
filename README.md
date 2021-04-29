@@ -47,9 +47,10 @@ API:et:
 https://retoolapi.dev/T5kUZD/todos
 Är ett API fyllt med mock-data av olika slag.
 Jag använder API:et för att ha en databas med todos att testa fetchanrop med i min applikation. Tanken är att denna senare ska bytas ut till en databas med riktig todo information.
-Jag använder API:et i TODO: rad TODO: för att hämta en användare beroende på inmatat id.
+Jag använder API:et i:
+TODO: rad TODO: för att hämta en todos beroende på inmatat id.
+TODO: rad TODO: för att ...
+TODO: rad TODO: för att ...
 
 TODO: 
-[1] Kolla att instruktionerna stämmer(och fungerar!) här i README.
-[2] Kolla att listan med externa bibliotek stämmer.
-[3] Kolla så att de externa tjänsterna stämmer.
+[1] Kolla att instruktionerna stämmer(och fungerar!) här i README... ALLT!
