@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    HashRouter as Router,
     Switch,
     Route,
     Link
@@ -18,11 +17,10 @@ import StudyTips from './study-tips-view'
 class FooterNav extends React.Component{
     render(){
         return(
-            <Router>
                 <div>
                     <nav>
                     <div className="footerContent">
-                    <Switch>
+                   
                         <Route path='/home'>
                             <ToDoList todos={this.props.todos} />
                         </Route>
@@ -32,7 +30,7 @@ class FooterNav extends React.Component{
                         <Route path='/studyTips'>
                             <StudyTips/>
                         </Route>
-                    </Switch>
+                   
                     </div>
                     <div className="footerNav">
                     <hr/>
@@ -62,7 +60,6 @@ class FooterNav extends React.Component{
                     </div>
                     </nav>
                 </div>
-            </Router>
         );
     }
 }

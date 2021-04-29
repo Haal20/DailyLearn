@@ -6,10 +6,6 @@ export async function POSTtodo(toDoName) {
         userId: 1,
         completed: false
     };
-    
-    console.log('title: ' + newToDoObj.title);
-    console.log('userId: ' + newToDoObj.userId);
-    console.log('completed: ' + newToDoObj.completed);
 
     try{
     const res = await fetch( 'https://retoolapi.dev/T5kUZD/todos', {  
@@ -22,7 +18,6 @@ export async function POSTtodo(toDoName) {
         console.log('POSTdata: ' , data);
 
         return GETtodos();
-
     }catch(error){
         console.log(error);
     }
