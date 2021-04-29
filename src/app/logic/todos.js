@@ -13,10 +13,7 @@ export async function POSTtodo(toDoName) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newToDoObj)
         });
-
-        const data = await res.json();
-        console.log('POSTdata: ' , data);
-
+        await res.json();
         return GETtodos();
     }catch(error){
         console.log(error);
