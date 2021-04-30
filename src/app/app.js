@@ -1,35 +1,34 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import Header from './header.js'
-import Main from './main.js'
-import Footer from './footer.js'
-import ToDoList from './to-do-list.js'
-import GameMap from './game-map.js'
-import StudyTips from './study-tips.js'
+import  ReactDOM from 'react-dom'
+import { FooterNav } from './footer-nav.js'
+import { BurgerNav } from './burger-nav.js';
+import { GETtodos } from './logic/todos.js'
+import { HashRouter } from "react-router-dom"
 
 export class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      view: 'toDoView'
+      todos: [],
     };
   }
 
+  async componentDidMount(){
+    const todos = await GETtodos();
+    this.setState({todos});
+  }
 
   render() {
       return ( 
           <div>
-            <Header />
-            <Main view = {this.state.view} />
-
-            <Footer> 
-              <ToDoList onClick={()=> this.setState({ view: 'toDoView' })}/>
-              <GameMap  onClick={()=> this.setState({ view: 'gameMapView' })}/>
-              <StudyTips onClick={()=> this.setState({ view: 'studyTipsView' })}/> 
-            </Footer>
+        
+              <BurgerNav />
+              <FooterNav todos={this.state.todos}>
+              </FooterNav>
+         
           </div>
           );
       }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'))

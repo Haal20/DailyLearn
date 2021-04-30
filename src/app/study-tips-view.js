@@ -1,17 +1,17 @@
 import React from 'react'
 
-class StudyTipsView extends React.Component {
+export class StudyTipsView extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       localString:''
     };
+    //save string LocalStorage
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    
     const input = e.target.value;
     this.setState({localString: input});
   }
@@ -45,6 +45,6 @@ class StudyTipsView extends React.Component {
         </div>
       );
     }
-  }
+}
    
-  export default StudyTipsView;
+  
