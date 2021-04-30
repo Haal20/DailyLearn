@@ -1,6 +1,4 @@
 import React from 'react'
-import { POSTtodo, GETtodo } from '../logic/todos'
-import { ToDoObject } from './to-do-object';
 import { FormGetToDo } from './form-get-to-do.js'
 import { FormCreateToDo } from './form-create-to-do.js'
 

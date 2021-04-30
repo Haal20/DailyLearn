@@ -20,7 +20,7 @@ export class FooterNav extends React.Component{
                     <nav>
                     <div className="footerContent">
                    
-                        <Route path='/home'>
+                        <Route exact path='/'>
                             <ToDoView todos={this.props.todos} />
                         </Route>
                         <Route path='/gameMap'>
@@ -35,7 +35,7 @@ export class FooterNav extends React.Component{
                     <hr/>
                         <ul>
                             <li>
-                                <Link to='/home'>
+                                <Link to='/'>
                                     <span className="icon">
                                         <FontAwesomeIcon icon={faHome} />
                                     </span>

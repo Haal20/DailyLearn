@@ -1,7 +1,5 @@
 import React from 'react'
 import {
-    HashRouter as Router,
-    Switch,
     Route,
     Link
   } from "react-router-dom"
@@ -48,7 +46,7 @@ export class BurgerNav extends React.Component {
                     </span>
                 </button>
                 <div id="navMenu" className="navbar-menu is-active">
-                <Router>
+              
                 <div>
                     <nav>
                     <div className="burgerNav">
@@ -79,7 +77,7 @@ export class BurgerNav extends React.Component {
                         <hr></hr>
                     </div>
                     <div className="burgerContent">
-                    <Switch>
+                   
                         <Route path='/aboutUs'>
                             <AboutUs/>
                         </Route>
@@ -89,11 +87,11 @@ export class BurgerNav extends React.Component {
                         <Route path='/teacherContacts'>
                             <TeacherContacts/>
                         </Route>
-                    </Switch>
+                
                     </div>
                     </nav>
                     </div>
-                    </Router>
+                   
                 </div>
             </div>
            
