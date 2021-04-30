@@ -1,7 +1,7 @@
 import React from 'react'
 import image from 'url:./images/map.png'
 
-class GameMapView extends React.Component {
+export class GameMapView extends React.Component {
     render() {
       return (
         <div>
@@ -9,6 +9,4 @@ class GameMapView extends React.Component {
         </div>
       );
     }
-  }
-   
-  export default GameMapView
+}

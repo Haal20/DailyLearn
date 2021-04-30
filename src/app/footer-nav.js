@@ -1,7 +1,5 @@
 import React from 'react'
 import {
-    HashRouter as Router,
-    Switch,
     Route,
     Link
   } from "react-router-dom"
@@ -11,34 +9,33 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 //Import the views
-import ToDoList from './todo/to-do-view'
-import GameMap from './game-map-view'
-import StudyTips from './study-tips-view'
+import { ToDoView } from './todo/to-do-view'
+import { GameMapView } from './game-map-view'
+import { StudyTipsView } from './study-tips-view'
 
-class FooterNav extends React.Component{
+export class FooterNav extends React.Component{
     render(){
         return(
-            <Router>
                 <div>
                     <nav>
                     <div className="footerContent">
-                    <Switch>
-                        <Route path='/home'>
-                            <ToDoList/>
+                   
+                        <Route exact path='/'>
+                            <ToDoView todos={this.props.todos} />
                         </Route>
                         <Route path='/gameMap'>
-                            <GameMap/>
+                            <GameMapView/>
                         </Route>
                         <Route path='/studyTips'>
-                            <StudyTips/>
+                            <StudyTipsView/>
                         </Route>
-                    </Switch>
+                   
                     </div>
                     <div className="footerNav">
                     <hr/>
                         <ul>
                             <li>
-                                <Link to='/home'>
+                                <Link to='/'>
                                     <span className="icon">
                                         <FontAwesomeIcon icon={faHome} />
                                     </span>
@@ -62,9 +59,6 @@ class FooterNav extends React.Component{
                     </div>
                     </nav>
                 </div>
-            </Router>
         );
     }
 }
-
-export default FooterNav

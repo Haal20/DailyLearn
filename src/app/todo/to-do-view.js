@@ -1,29 +1,20 @@
 import React from 'react'
+import { FormGetToDo } from './form-get-to-do.js'
+import { FormCreateToDo } from './form-create-to-do.js'
 
-class ToDoView extends React.Component {
+export class ToDoView extends React.Component {
   constructor(props){
     super(props);
     this.state = {
     };
   }
-
-  componentDidMount() {
-    const localData = localStorage.getItem('localString');
-    this.setState({localStorageData: localData });
-  }
-
     render() {
+      const todos = this.props.todos;
       return (
         <div>
-          <h1>Tisdag</h1>
-          Här ska "att-göra" listan vara
-          <br />
-          <br />
-          Du har sparat detta i LocalStorage: <br/> {this.state.localStorageData}
-
+          <FormGetToDo />
+          <FormCreateToDo todos={todos} />
         </div>
       );
     }
-  }
-   
-  export default ToDoView
+}

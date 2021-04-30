@@ -43,8 +43,12 @@ VARFÖR: för att göra det möjligt att koda med react-komponenter, JSX samt re
 Parcel/transformer-image finns för att kunna importera bilder i applikationen 
 
 #TJÄNSTER
-Lista och förklara API:er som används, vart i koden och varför.
-
-TODO: 
-[1] Kolla att instruktionerna stämmer(och fungerar!) här i README.
-[2] Kolla att listan med externa bibliotek stämmer.
+API:et:
+https://retoolapi.dev/T5kUZD/todos
+Är ett API fyllt med mock-data av olika slag.
+Jag använder API:et för att ha en databas med todos att testa fetch anrop med i min applikation. Tanken är att denna senare ska bytas ut till en databas med riktig todo information.
+Jag använder API:et i:
+app.js rad 17 för att hämta alla todos.
+form-get-to-do.js rad 22 för att hämta ett todo men hjälp av id.
+form-create-to-do.js rad 23 för att för att skapa nytt todo.
+todo.js rad 11, 26, 35 för att skapa logiken för ovanstående funktioner.

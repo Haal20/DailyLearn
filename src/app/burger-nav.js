@@ -1,7 +1,5 @@
 import React from 'react'
 import {
-    HashRouter as Router,
-    Switch,
     Route,
     Link
   } from "react-router-dom"
@@ -11,11 +9,11 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons'
 //view for nav
-import AboutUs from './about-us'
-import Profil from './profil'
-import TeacherContacts from './teacher-contacts'
+import { AboutUs } from './about-us.js'
+import { Profil } from './profil.js'
+import { TeacherContacts } from './teacher-contacts.js'
 
-class BurgerNav extends React.Component {
+export class BurgerNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -48,7 +46,7 @@ class BurgerNav extends React.Component {
                     </span>
                 </button>
                 <div id="navMenu" className="navbar-menu is-active">
-                <Router>
+              
                 <div>
                     <nav>
                     <div className="burgerNav">
@@ -79,7 +77,7 @@ class BurgerNav extends React.Component {
                         <hr></hr>
                     </div>
                     <div className="burgerContent">
-                    <Switch>
+                   
                         <Route path='/aboutUs'>
                             <AboutUs/>
                         </Route>
@@ -89,11 +87,11 @@ class BurgerNav extends React.Component {
                         <Route path='/teacherContacts'>
                             <TeacherContacts/>
                         </Route>
-                    </Switch>
+                
                     </div>
                     </nav>
                     </div>
-                    </Router>
+                   
                 </div>
             </div>
            
@@ -114,4 +112,3 @@ class BurgerNav extends React.Component {
         );
     }
 }
-export default BurgerNav
