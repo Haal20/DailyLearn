@@ -21,7 +21,7 @@ OR
 (Ctrl + Right) click the "http://localhost:1337" that appers in the terminal after running the npm start command.
 In the browser window (Ctrl + Shift + M) for the best mobile friendly experience the application was designed for.
 
-Parsel will transpile the code outomagicaly when you run "npm start". This because we have "start": "parcel *.html --port 1234" in our "scripts" inside of the package.json file.
+Parsel will transpile the code outomagicaly when you run "npm start". This because we have "start": "parcel *.html --port 1337" in our "scripts" inside of the package.json file.
 
 #LISTA MED EXTERNA BIBLIOTEK
 "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -41,6 +41,9 @@ VARFÖR: för att göra det möjligt att koda med react-komponenter, JSX samt re
 
 "@parcel/transformer-image": "^2.0.0-beta.2"
 Parcel/transformer-image finns för att kunna importera bilder i applikationen 
+
+"react-router-dom": "^5.2.0"
+react-router används i applikationen för att presentera olika vyer för användaren samt för att få tillgång till funktionen med webb-historikens tillbaka frammåt och ladda om knapp. så man stannar på senast besökta vun när man laddar om eller gå till baka till föregående om man laddar om osv.
 
 #TJÄNSTER
 API:et:
