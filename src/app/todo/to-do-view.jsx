@@ -8,12 +8,12 @@ export class ToDoView extends React.Component {
   }
     render() {
       const todos = this.props.todos;
+      const todo = this.props.todo;
       return (
         <div>
           <FormGetToDo 
-          onChange={()=> this.props.handleGetChange()}
-          onSubmit={() => this.handleFormSubmit}
-          todo = {this.props.todo} />
+          onGetChange={(e)=> this.props.handleGetChange(e)}
+          todo = {todo} />
           <FormCreateToDo todos={todos} />
         </div>
       );

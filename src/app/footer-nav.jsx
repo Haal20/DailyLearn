@@ -27,8 +27,8 @@ export class FooterNav extends React.Component{
                             <ToDoView 
                                 todos={this.props.todos} 
                                 todo = {this.props.todo} 
-                                onChange={()=> this.props.handleGetChange()}
-                                onSubmit={() => this.handleFormSubmit} />
+                                onGetChange={(e)=> this.props.handleGetChange(e)}
+                            />
                         </Route>
                         <Route path='/gameMap'>
                             <GameMapView/>

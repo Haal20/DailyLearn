@@ -18,7 +18,8 @@ export class App extends React.Component {
   }
 
   handleGetChange(e) {
-    this.setState({todoInput: e})
+    const input = e.target.value;
+    this.setState({todoInput: input})
   }
 
   async handleFormSubmit() {
@@ -43,8 +44,8 @@ export class App extends React.Component {
             <FooterNav 
               todos = {this.state.todos}
               todo = {todo}
-              onGetChange = {() => this.handleGetChange}
-              onSubmit={() => this.handleFormSubmit} />
+              onGetChange = {(e) => this.handleGetChange(e)}
+            />
           </div>
           );
       }

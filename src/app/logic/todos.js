@@ -8,7 +8,7 @@ export async function POSTtodo(toDoName) {
     };
 
     try{
-    const res = await fetch( 'https://retoolapi.dev/T5kUZD/todos', {  
+    const res = await fetch( 'https://retoolapi.dev/SY5MJp/homework', {  
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newToDoObj)
@@ -23,7 +23,7 @@ export async function POSTtodo(toDoName) {
 
 export async function GETtodo(toDoId) {
 
-    const res = await fetch(`https://retoolapi.dev/T5kUZD/todos/${toDoId}`);
+    const res = await fetch(`https://retoolapi.dev/SY5MJp/homework/${toDoId}`);
     const data = await res.json();
 
     return data
@@ -32,7 +32,7 @@ export async function GETtodo(toDoId) {
 
 export async function GETtodos() {
 
-    const res = await fetch(`https://retoolapi.dev/T5kUZD/todos`);
+    const res = await fetch(`https://retoolapi.dev/SY5MJp/homework`);
     const data = await res.json();
 
     return data
