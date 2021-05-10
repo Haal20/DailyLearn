@@ -24,7 +24,7 @@ export class App extends React.Component {
 
   async handleFormSubmit() {
     // Gets a singel todo Object
-    const todoObj = await GETtodo(this.props.todo);
+    const todoObj = await GETtodo(this.props.todoInput);
     this.setState({todo: todoObj});
     //Clears Placeholder in input
     this.setState({todo: ''});

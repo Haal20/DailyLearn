@@ -1,9 +1,10 @@
 
 export async function POSTtodo(toDoName) {
-
+    // TODO: Ta fler inputs för tex Type och StudyTime
     const newToDoObj = {
-        title: toDoName,
-        userId: 1,
+        assignmentName: toDoName,
+        assignmentType: 'prov',
+        StudyTime: Math.random(10,60),
         completed: false
     };
 
