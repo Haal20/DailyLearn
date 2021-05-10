@@ -1,6 +1,6 @@
 import React from 'react';
 import { POSTtodo } from '../logic/todos.js'
-import { ToDoObject } from './to-do-object.js'
+import { ToDoObject } from './to-do-object.jsx'
 
 export class FormCreateToDo extends React.Component {
   constructor(props){

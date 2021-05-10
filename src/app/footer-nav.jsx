@@ -9,11 +9,14 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 //Import the views
-import { ToDoView } from './todo/to-do-view'
-import { GameMapView } from './game-map-view'
-import { StudyTipsView } from './study-tips-view'
+import { ToDoView } from './todo/to-do-view.jsx'
+import { GameMapView } from './game-map-view.jsx'
+import { StudyTipsView } from './study-tips-view.jsx'
 
 export class FooterNav extends React.Component{
+    constructor(props){
+        super(props);
+    }
     render(){
         return(
                 <div>
@@ -21,7 +24,11 @@ export class FooterNav extends React.Component{
                     <div className="footerContent">
                    
                         <Route exact path='/'>
-                            <ToDoView todos={this.props.todos} />
+                            <ToDoView 
+                                todos={this.props.todos} 
+                                todo = {this.props.todo} 
+                                onChange={()=> this.props.handleGetChange()}
+                                onSubmit={() => this.handleFormSubmit} />
                         </Route>
                         <Route path='/gameMap'>
                             <GameMapView/>

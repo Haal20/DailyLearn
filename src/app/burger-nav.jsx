@@ -9,9 +9,9 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons'
 //view for nav
-import { AboutUs } from './about-us.js'
-import { Profil } from './profil.js'
-import { TeacherContacts } from './teacher-contacts.js'
+import { AboutUs } from './about-us.jsx'
+import { Profil } from './profil.jsx'
+import { TeacherContacts } from './teacher-contacts.jsx'
 
 export class BurgerNav extends React.Component {
     constructor(props) {
