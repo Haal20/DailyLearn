@@ -2,7 +2,7 @@ import React from 'react'
 import  ReactDOM from 'react-dom'
 import { FooterNav } from './footer-nav.jsx'
 import { BurgerNav } from './burger-nav.jsx';
-import { GETtodos } from './logic/todos.js'
+import { GETtodos, GETtodo } from './logic/todos.js'
 import { HashRouter } from "react-router-dom"
 
 export class App extends React.Component {
@@ -14,7 +14,7 @@ export class App extends React.Component {
       todo:[]
     };
     this.handleGetChange = this.handleGetChange.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleFormGetSubmit = this.handleFormGetSubmit.bind(this);
   }
 
   handleGetChange(e) {
@@ -22,12 +22,12 @@ export class App extends React.Component {
     this.setState({todoInput: input})
   }
 
-  async handleFormSubmit() {
+  async handleFormGetSubmit() {
     // Gets a singel todo Object
-    const todoObj = await GETtodo(this.props.todoInput);
+    const todoObj = await GETtodo(this.state.todoInput);
     this.setState({todo: todoObj});
     //Clears Placeholder in input
-    this.setState({todo: ''});
+    this.setState({todoInput: ''});
   }
 
   async componentDidMount(){
@@ -37,6 +37,7 @@ export class App extends React.Component {
 
   render() {
     const todo = this.state.todo;
+    const todoInput = this.state.todoInput;
       return ( 
           <div>
         
@@ -44,7 +45,9 @@ export class App extends React.Component {
             <FooterNav 
               todos = {this.state.todos}
               todo = {todo}
-              onGetChange = {(e) => this.handleGetChange(e)}
+              todoInput = {todoInput}
+              onChange = {this.handleGetChange}
+              onSubmit = {this.handleFormGetSubmit}
             />
           </div>
           );
