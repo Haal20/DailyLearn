@@ -11,7 +11,7 @@ export class FormGetToDo extends React.Component {
       return (
         <div>
           Hämta att-göra med id (nummer mellan 1-25):
-          <form onSubmit={this.props.onSubmit}>
+          <form onSubmit={this.props.onGetSubmit}>
             <label>
               <input placeholder="Skriv id..." value={todoInput} onChange={this.props.onChange} />
             </label>

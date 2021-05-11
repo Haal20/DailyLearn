@@ -29,7 +29,8 @@ export class FooterNav extends React.Component{
                                 todo = {this.props.todo} 
                                 todoInput = {this.props.todoInput}
                                 onChange={this.props.onChange}
-                                onSubmit = {this.props.onSubmit}
+                                onGetSubmit = {this.props.onGetSubmit}
+                                onPostSubmit = {this.props.onPostSubmit}
                             />
                         </Route>
                         <Route path='/gameMap'>

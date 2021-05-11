@@ -2,7 +2,7 @@ import React from 'react'
 import  ReactDOM from 'react-dom'
 import { FooterNav } from './footer-nav.jsx'
 import { BurgerNav } from './burger-nav.jsx';
-import { GETtodos, GETtodo } from './logic/todos.js'
+import { GETtodos, GETtodo, POSTtodo } from './logic/todos.js'
 import { HashRouter } from "react-router-dom"
 
 export class App extends React.Component {
@@ -13,11 +13,12 @@ export class App extends React.Component {
       todoInput: '',
       todo:[]
     };
-    this.handleGetChange = this.handleGetChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleFormGetSubmit = this.handleFormGetSubmit.bind(this);
+    this.handleFormPostSubmit = this.handleFormPostSubmit.bind(this);
   }
 
-  handleGetChange(e) {
+  handleChange(e) {
     const input = e.target.value;
     this.setState({todoInput: input})
   }
@@ -26,6 +27,13 @@ export class App extends React.Component {
     // Gets a singel todo Object
     const todoObj = await GETtodo(this.state.todoInput);
     this.setState({todo: todoObj});
+    //Clears Placeholder in input
+    this.setState({todoInput: ''});
+  }
+
+  async handleFormPostSubmit() {
+    //PostOne
+    await POSTtodo(this.state.todoInput)
     //Clears Placeholder in input
     this.setState({todoInput: ''});
   }
@@ -46,8 +54,9 @@ export class App extends React.Component {
               todos = {this.state.todos}
               todo = {todo}
               todoInput = {todoInput}
-              onChange = {this.handleGetChange}
-              onSubmit = {this.handleFormGetSubmit}
+              onChange = {this.handleChange}
+              onGetSubmit = {this.handleFormGetSubmit}
+              onPostSubmit = {this.handleFormPostSubmit}
             />
           </div>
           );

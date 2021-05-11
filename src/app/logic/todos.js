@@ -4,7 +4,7 @@ export async function POSTtodo(toDoName) {
     const newToDoObj = {
         assignmentName: toDoName,
         assignmentType: 'prov',
-        StudyTime: Math.random(10,60),
+        StudyTime:15,
         completed: false
     };
 
