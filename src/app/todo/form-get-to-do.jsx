@@ -4,23 +4,24 @@ import { ToDoObject } from './to-do-object.jsx'
 export class FormGetToDo extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      todoInput: '',
+    };
   }
     render() {
-      const todo = this.props.todo;
-      const todoInput = this.props.todoInput;
       return (
         <div>
           Hämta att-göra med id (nummer mellan 1-25):
-          <form onSubmit={this.props.onGetSubmit}>
+          <div>
             <label>
-              <input placeholder="Skriv id..." value={todoInput} onChange={this.props.onChange} />
+              <input placeholder="Skriv id..." value={this.state.todoInput} onChange={(e) => this.setState({todoInput: e.target.value})} />
             </label>
-            <button type="submit">Hämta att-göra</button>
-          </form>
+            <button onClick={() => this.props.onGetSubmit(this.state.todoInput)} >Hämta att-göra</button>
+          </div>
           Att-göra du hämtade: 
         <br/>
         <ul>
-          <ToDoObject todo={todo}/>
+          <ToDoObject todo={this.props.todo}/>
         </ul>
         <br/>
         </div>

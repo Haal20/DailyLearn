@@ -4,6 +4,9 @@ import { FooterNav } from './footer-nav.jsx'
 import { BurgerNav } from './burger-nav.jsx';
 import { GETtodos, GETtodo, POSTtodo } from './logic/todos.js'
 import { HashRouter } from "react-router-dom"
+import { FormGetToDo } from './todo/form-get-to-do'
+import { FormCreateToDo } from './todo/form-create-to-do'
+import { ToDoView } from './todo/to-do-view.jsx'
 
 export class App extends React.Component {
   constructor(props){
@@ -23,12 +26,12 @@ export class App extends React.Component {
     this.setState({todoInput: input})
   }
 
-  async handleFormGetSubmit() {
+  async handleFormGetSubmit(todoId) {
     // Gets a singel todo Object
-    const todoObj = await GETtodo(this.state.todoInput);
+    const todoObj = await GETtodo(todoId);
     this.setState({todo: todoObj});
     //Clears Placeholder in input
-    this.setState({todoInput: ''});
+    this.setState({todoInput: ''}); // todoId
   }
 
   async handleFormPostSubmit() {
@@ -44,20 +47,21 @@ export class App extends React.Component {
   }
 
   render() {
-    const todo = this.state.todo;
-    const todoInput = this.state.todoInput;
       return ( 
           <div>
-        
             <BurgerNav />
-            <FooterNav 
-              todos = {this.state.todos}
-              todo = {todo}
-              todoInput = {todoInput}
-              onChange = {this.handleChange}
-              onGetSubmit = {this.handleFormGetSubmit}
-              onPostSubmit = {this.handleFormPostSubmit}
-            />
+            <FooterNav >
+              <ToDoView>
+                <FormGetToDo 
+                  onGetSubmit = {this.handleFormGetSubmit}
+                  todo = {this.state.todo} />
+                <FormCreateToDo 
+                  todos={this.state.todos}
+                  todoInput = {this.state.todoInput}
+                  onChange={this.handleChange}
+                  onPostSubmit = {this.handleFormPostSubmit} />
+              </ToDoView>
+            </ FooterNav>
           </div>
           );
       }
