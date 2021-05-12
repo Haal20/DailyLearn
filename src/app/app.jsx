@@ -11,6 +11,7 @@ import { GameMapView } from './components/game-map-view.jsx'
 import { StudyTipsView } from './components/study-tips-view.jsx'
 import { Route } from "react-router-dom"
 import { ListAllToDo } from './components/list-all-to-do.jsx';
+import { ErrorBoundary } from './logic/error-boundary.jsx';
 
 export class App extends React.Component {
   constructor(p){
@@ -45,6 +46,7 @@ export class App extends React.Component {
       return ( 
           <div>
             <BurgerNav />
+            <ErrorBoundary>
             <FooterNav >
               <Route exact path='/'>
                 <ToDoView>
@@ -65,6 +67,7 @@ export class App extends React.Component {
                 </ StudyTipsView>
               </Route>
             </ FooterNav>
+            </ErrorBoundary>
           </div>
           );
       }
