@@ -3,7 +3,7 @@ Classroom application.
 This application is only designed for mobile use. Please have that in mind if 
 viewing on a big screen device.
 
-#GETTING STARTED
+# GETTING STARTED
 Clone the repository by copying the HTTPS adress on the projects GitHub page (should be a button called "Code" where you can fint it).
 Choose a map to store the projekt in; right click the map and choose "Git Bash Here".
 Your terminalwindow should now be open.
@@ -23,21 +23,21 @@ In the browser window (Ctrl + Shift + M) for the best mobile friendly experience
 
 Parsel will transpile the code outomagicaly when you run "npm start". This because we have "start": "parcel *.html --port 1337" in our "scripts" inside of the package.json file.
 
-#LISTA MED EXTERNA BIBLIOTEK
+# LISTA MED EXTERNA BIBLIOTEK
 "@fortawesome/fontawesome-svg-core": "^1.2.35",
 "@fortawesome/free-solid-svg-icons": "^5.15.3",
 "@fortawesome/react-fontawesome": "^0.1.14",
-VADFÖR DE TRE OVAN: för att kunna använda fontawesome-iconer i min application.
+De tre ovan används för att kunna importera fontawesome-iconer i min application.
 
 "bulma": "^0.9.2",
-VARFÖR: för att kunna använda Bulma för styling och css i hela applikationen.
+Används för att kunna använda Bulma för styling och css i hela applikationen.
 
 "parcel": "^2.0.0-beta.2",
-VARFÖR: för att kunna använda Parcel till att transpilera react-koden till ett tillstånd som är körbart i webbläsaren.
+Används för att kunna använda Parcel till att transpilera react-koden till ett tillstånd som är körbart i webbläsaren.
 
 "react": "^17.0.2",
 "react-dom": "^17.0.2"
-VARFÖR: för att göra det möjligt att koda med react-komponenter, JSX samt rendera react kod i DOM:en
+Används för att göra det möjligt att koda med react-komponenter, JSX samt rendera react kod i DOM:en
 
 "@parcel/transformer-image": "^2.0.0-beta.2"
 Parcel/transformer-image finns för att kunna importera bilder i applikationen 
@@ -45,15 +45,18 @@ Parcel/transformer-image finns för att kunna importera bilder i applikationen
 "react-router-dom": "^5.2.0"
 react-router används i applikationen för att presentera olika vyer för användaren samt för att få tillgång till funktionen med webb-historikens tillbaka frammåt och ladda om knapp. så man stannar på senast besökta vun när man laddar om eller gå till baka till föregående om man laddar om osv.
 
-#TJÄNSTER
+"prop-types": "^15.7.2",
+Används för att validera komponenters properties.
+
+# TJÄNSTER
 API:et:
 https://retoolapi.dev/qNPOA3/homework
 Är ett API fyllt med mock-data av olika slag.
 Jag använder API:et för att ha en databas med todos att testa fetch anrop med i min applikation. Tanken är att denna senare ska bytas ut till en databas med riktig todo information.
 Jag använder API:et i:
 # app.js 
-rad 29 för att hämta todo med hjälp av id;
-rad 36 för att skapa ny todo; 
-rad 41 för att hämta alla todos.
+rad 30 för att hämta todo med hjälp av id;
+rad 37 för att skapa ny todo; 
+rad 42 för att hämta alla todos.
 # todo.js 
 rad 11, 26, 35 för att skapa logiken för ovanstående funktioner.

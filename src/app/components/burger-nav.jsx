@@ -3,12 +3,12 @@ import {
     Route,
     Link
   } from "react-router-dom";
-//fint awesome icons
+//fontAwesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
-//view for nav
+//view components
 import { AboutUs } from './about-us.jsx';
 import { Profil } from './profil.jsx';
 import { TeacherContacts } from './teacher-contacts.jsx';
