@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 import {
     Route,
     Link
-  } from "react-router-dom"
+  } from "react-router-dom";
 //fint awesome icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
-import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 //view for nav
-import { AboutUs } from './about-us.jsx'
-import { Profil } from './profil.jsx'
-import { TeacherContacts } from './teacher-contacts.jsx'
+import { AboutUs } from './about-us.jsx';
+import { Profil } from './profil.jsx';
+import { TeacherContacts } from './teacher-contacts.jsx';
 
 export class BurgerNav extends React.Component {
     constructor(p) {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export class Profil extends React.Component {
     render() {

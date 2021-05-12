@@ -1,10 +1,11 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React from 'react';
+import PropTypes, { element } from 'prop-types';
+import { Link } from "react-router-dom";
 //Fontawesome icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
-import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 
 export class FooterNav extends React.Component{
     constructor(p){
@@ -39,3 +40,7 @@ export class FooterNav extends React.Component{
         );
     }
 }
+
+FooterNav.propTypes = {
+    children: PropTypes.arrayOf(element)
+  };
