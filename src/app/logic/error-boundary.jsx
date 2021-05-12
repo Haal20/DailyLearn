@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBug } from '@fortawesome/free-solid-svg-icons'
 
 export class ErrorBoundary extends React.Component {
     constructor(p){
@@ -20,7 +22,17 @@ export class ErrorBoundary extends React.Component {
 
     render() {
         if (this.state.hasError) {
-          return <h1>Någonting gick fel... {this.state.error}</h1>;
+          return (
+          <div>
+              <div>
+                  <FontAwesomeIcon icon={faBug} />
+              </div>
+              <h1> Kunde inte ladda sidans innehåll, vi är ledsna för besväret...</h1>
+              <div>
+                  {this.state.error}
+              </div>
+          </div>
+          );
         }
     
         return this.props.children; 

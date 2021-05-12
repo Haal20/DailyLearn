@@ -46,7 +46,6 @@ export class App extends React.Component {
       return ( 
           <div>
             <BurgerNav />
-            <ErrorBoundary>
             <FooterNav >
               <Route exact path='/'>
                 <ToDoView>
@@ -67,10 +66,9 @@ export class App extends React.Component {
                 </ StudyTipsView>
               </Route>
             </ FooterNav>
-            </ErrorBoundary>
           </div>
           );
       }
 }
 
-ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'))
+ReactDOM.render(<ErrorBoundary><HashRouter><App /></HashRouter></ErrorBoundary>, document.getElementById('root'))
