@@ -51,7 +51,9 @@ https://retoolapi.dev/qNPOA3/homework
 Är ett API fyllt med mock-data av olika slag.
 Jag använder API:et för att ha en databas med todos att testa fetch anrop med i min applikation. Tanken är att denna senare ska bytas ut till en databas med riktig todo information.
 Jag använder API:et i:
-app.js rad 17 för att hämta alla todos.
-form-get-to-do.js rad 22 för att hämta ett todo men hjälp av id.
-form-create-to-do.js rad 23 för att för att skapa nytt todo.
-todo.js rad 11, 26, 35 för att skapa logiken för ovanstående funktioner.
+# app.js 
+rad 29 för att hämta todo med hjälp av id;
+rad 36 för att skapa ny todo; 
+rad 41 för att hämta alla todos.
+# todo.js 
+rad 11, 26, 35 för att skapa logiken för ovanstående funktioner.
