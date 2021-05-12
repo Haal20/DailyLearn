@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export class FormCreateToDo extends React.Component {
   constructor(p){
@@ -23,3 +24,7 @@ export class FormCreateToDo extends React.Component {
       );
     }
   }
+
+FormCreateToDo.propTypes = {
+  onPostSubmit: PropTypes.func.isRequired
+};

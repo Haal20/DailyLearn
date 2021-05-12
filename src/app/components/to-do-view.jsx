@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class ToDoView extends React.Component {
   constructor(p){
@@ -12,3 +13,7 @@ export class ToDoView extends React.Component {
       );
     }
 }
+
+ToDoView.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element)
+};

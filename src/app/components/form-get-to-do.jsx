@@ -1,5 +1,6 @@
 import React from 'react';
-import { ToDoObject } from './to-do-object.jsx'
+import PropTypes from 'prop-types';
+import { ToDoObject } from './to-do-object.jsx';
 
 export class FormGetToDo extends React.Component {
   constructor(p){
@@ -28,3 +29,8 @@ export class FormGetToDo extends React.Component {
       );
     }
   }
+
+FormGetToDo.propTypes = {
+  todo: PropTypes.object,
+  onGetSubmit: PropTypes.func.isRequired
+};

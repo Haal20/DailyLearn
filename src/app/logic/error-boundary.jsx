@@ -1,6 +1,6 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBug } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBug } from '@fortawesome/free-solid-svg-icons';
 
 export class ErrorBoundary extends React.Component {
     constructor(p){

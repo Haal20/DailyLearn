@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class ToDoObject extends React.Component {
     constructor(p){
@@ -20,3 +21,7 @@ export class ToDoObject extends React.Component {
         );
     }
 }
+
+ToDoObject.propTypes = {
+    todo: PropTypes.object
+  };
