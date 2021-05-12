@@ -47,7 +47,7 @@ react-router används i applikationen för att presentera olika vyer för använ
 
 #TJÄNSTER
 API:et:
-https://retoolapi.dev/T5kUZD/todos
+https://retoolapi.dev/qNPOA3/homework
 Är ett API fyllt med mock-data av olika slag.
 Jag använder API:et för att ha en databas med todos att testa fetch anrop med i min applikation. Tanken är att denna senare ska bytas ut till en databas med riktig todo information.
 Jag använder API:et i:

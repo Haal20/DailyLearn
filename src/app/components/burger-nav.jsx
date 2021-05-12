@@ -14,8 +14,8 @@ import { Profil } from './profil.jsx'
 import { TeacherContacts } from './teacher-contacts.jsx'
 
 export class BurgerNav extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor(p) {
+        super(p);
         this.state = {
             isToggle: false,
         };
