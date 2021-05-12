@@ -8,7 +8,7 @@ export class ToDoObject extends React.Component {
         return (
             <div>
                 <li>
-                    <button>
+                    <button> {/* TODO: Gör så man kommer till todos egen-vy */}
                     id: {this.props.todo.id}<br/>
                     type: {this.props.todo.assignmentType}<br/>
                     name: {this.props.todo.assignmentName}<br/>

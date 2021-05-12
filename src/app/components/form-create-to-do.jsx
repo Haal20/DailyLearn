@@ -18,6 +18,7 @@ export class FormCreateToDo extends React.Component {
             <button onClick={() => this.props.onPostSubmit(this.state.todoInput)}>Skapa att-göra</button>
           </form>
           <br/>
+          {/* TODO: Skriv ut komponent som skapas */}
         </div>
       );
     }

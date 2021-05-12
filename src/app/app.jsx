@@ -24,7 +24,7 @@ export class App extends React.Component {
     this.handleFormPostSubmit = this.handleFormPostSubmit.bind(this);
   }
 
-  async handleFormGetSubmit(todoId) {
+  async handleFormGetSubmit( todoId ) {
     // Gets a singel todo Object
     const todoObj = await GETtodo(todoId);
     this.setState({todo: todoObj});

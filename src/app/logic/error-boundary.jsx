@@ -6,13 +6,11 @@ export class ErrorBoundary extends React.Component {
     constructor(p){
         super(p);
         this.state = { 
-            hasError: false, 
-            error:''
+            hasError: false
         };
     }
 
     static getDerivedStateFromError(error) {
-        this.setState({error: error});
         return { hasError: true };
     }
 
@@ -21,6 +19,7 @@ export class ErrorBoundary extends React.Component {
     }
 
     render() {
+        // TODO: är Error-boundryn rätt?
         if (this.state.hasError) {
           return (
           <div>
@@ -28,9 +27,6 @@ export class ErrorBoundary extends React.Component {
                   <FontAwesomeIcon icon={faBug} />
               </div>
               <h1> Kunde inte ladda sidans innehåll, vi är ledsna för besväret...</h1>
-              <div>
-                  {this.state.error}
-              </div>
           </div>
           );
         }
