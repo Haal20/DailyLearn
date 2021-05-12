@@ -1,8 +1,8 @@
 import React from 'react'
 
-export class ToDoView extends React.Component {
-  constructor(props){
-    super(props);
+export class StudyTipsView extends React.Component {
+  constructor(p){
+    super(p);
   }
     render() {
       return (
@@ -12,3 +12,5 @@ export class ToDoView extends React.Component {
       );
     }
 }
+   
+  

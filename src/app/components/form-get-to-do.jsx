@@ -2,8 +2,8 @@ import React from 'react';
 import { ToDoObject } from './to-do-object.jsx'
 
 export class FormGetToDo extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(p){
+    super(p);
     this.state = {
       todoInput: '',
     };
@@ -16,7 +16,7 @@ export class FormGetToDo extends React.Component {
             <label>
               <input placeholder="Skriv id..." value={this.state.todoInput} onChange={(e) => this.setState({todoInput: e.target.value})} />
             </label>
-            <button onClick={() => this.props.onGetSubmit(this.state.todoInput)} >Hämta att-göra</button>
+            <button onClick={() => this.props.onGetSubmit(this.state.todoInput)}> Hämta att-göra </button>
           </div>
           Att-göra du hämtade: 
         <br/>

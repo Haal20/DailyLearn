@@ -1,12 +1,10 @@
 import React from 'react';
-import { ToDoObject } from './to-do-object.jsx'
 
 export class FormCreateToDo extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(p){
+    super(p);
   }
     render() {
-        const todos = this.props.todos;
         const todoInput = this.props.todoInput;
       return (
         <div>
@@ -18,13 +16,6 @@ export class FormCreateToDo extends React.Component {
             <button type="submit">Skapa att-göra</button>
           </form>
           <br/>
-          <div>
-            <ul>
-              {todos.map(todo => 
-                  <ToDoObject key={todo.id} todo={todo}/>
-              )}
-            </ul>
-          </div>
         </div>
       );
     }
