@@ -11,6 +11,7 @@ import { GameMapView } from './components/game-map-view.jsx'
 import { StudyTipsView } from './components/study-tips-view.jsx'
 import { Route } from "react-router-dom"
 import { ListAllToDo } from './components/list-all-to-do.jsx';
+import { ErrorBoundary } from './logic/error-boundary.jsx';
 
 export class App extends React.Component {
   constructor(p){
@@ -23,7 +24,7 @@ export class App extends React.Component {
     this.handleFormPostSubmit = this.handleFormPostSubmit.bind(this);
   }
 
-  async handleFormGetSubmit(todoId) {
+  async handleFormGetSubmit( todoId ) {
     // Gets a singel todo Object
     const todoObj = await GETtodo(todoId);
     this.setState({todo: todoObj});
@@ -70,4 +71,4 @@ export class App extends React.Component {
       }
 }
 
-ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'))
+ReactDOM.render(<ErrorBoundary><HashRouter><App /></HashRouter></ErrorBoundary>, document.getElementById('root'))
