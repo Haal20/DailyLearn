@@ -14,6 +14,8 @@ export class ListAllToDo extends React.Component {
                     <ToDoObject key={todo.id} todo={todo}/>
                 )}
             </ul>
+            <br/>
+            <br/>
         </div>
       );
     }

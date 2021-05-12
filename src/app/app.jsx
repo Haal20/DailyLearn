@@ -17,32 +17,23 @@ export class App extends React.Component {
     super(p);
     this.state = {
       todos: [],
-      todoInput: '',
       todo:[]
     };
-    this.handleChange = this.handleChange.bind(this);
     this.handleFormGetSubmit = this.handleFormGetSubmit.bind(this);
     this.handleFormPostSubmit = this.handleFormPostSubmit.bind(this);
-  }
-
-  handleChange(e) {
-    const input = e.target.value;
-    this.setState({todoInput: input})
   }
 
   async handleFormGetSubmit(todoId) {
     // Gets a singel todo Object
     const todoObj = await GETtodo(todoId);
     this.setState({todo: todoObj});
-    //Clears Placeholder in input
-    this.setState({todoInput: ''}); // todoId
+    // TODO: Clears Placeholder in input
   }
 
-  async handleFormPostSubmit() {
+  async handleFormPostSubmit(todoInput) {
     //PostOne
-    await POSTtodo(this.state.todoInput)
-    //Clears Placeholder in input
-    this.setState({todoInput: ''});
+    await POSTtodo(todoInput)
+    // TODO: Clears Placeholder in input
   }
 
   async componentDidMount(){
@@ -70,8 +61,6 @@ export class App extends React.Component {
                 <StudyTipsView>
                 <FormCreateToDo 
                     todos={this.state.todos}
-                    todoInput = {this.state.todoInput}
-                    onChange={this.handleChange}
                     onPostSubmit = {this.handleFormPostSubmit} />
                 </ StudyTipsView>
               </Route>
