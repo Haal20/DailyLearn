@@ -14,19 +14,16 @@ export class ErrorBoundary extends React.Component {
         return { hasError: true };
     }
 
-    componentDidCatch(error, errorInfo) {
-        logErrorToMyService(error, errorInfo);
-    }
-
     render() {
-        // TODO: är Error-boundryn rätt?
         if (this.state.hasError) {
           return (
-          <div>
+          <div className='error'>
               <div>
-                  <FontAwesomeIcon icon={faBug} />
+                  <h1>
+                    <FontAwesomeIcon icon={faBug} />
+                  </h1>
               </div>
-              <h1> Kunde inte ladda sidans innehåll, vi är ledsna för besväret...</h1>
+              <h2> Kunde inte ladda sidans innehåll, vi är ledsna för besväret... </h2>
           </div>
           );
         }
