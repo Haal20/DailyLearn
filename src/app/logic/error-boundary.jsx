@@ -24,6 +24,7 @@ export class ErrorBoundary extends React.Component {
                   </h1>
               </div>
               <h2> Kunde inte ladda sidans innehåll, vi är ledsna för besväret... </h2>
+              <h3> Ladda om sidan och försök igen... </h3>
           </div>
           );
         }
