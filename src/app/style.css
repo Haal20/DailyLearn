@@ -24,3 +24,11 @@
     text-align: center;
     padding-top: 100px;
 }
+
+.night {
+    background-color: black;
+    color: blanchedalmond;
+}
+.themeButton {
+    text-align: right;
+}

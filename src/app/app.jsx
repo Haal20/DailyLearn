@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { createContext } from 'react';
 import  ReactDOM from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
 // Logic Error && Handling
@@ -13,16 +13,26 @@ import { ToDoView } from './components/to-do-view.jsx';
 import { GameMapView } from './components/game-map-view.jsx';
 import { StudyTipsView } from './components/study-tips-view.jsx';
 import { ListAllToDo } from './components/list-all-to-do.jsx';
+//import context
+import { NightModeContext } from './logic/create-context.js';
+import { ChangeThemeButton } from './components/change-theme-button.jsx';
 
 export class App extends React.Component {
   constructor(p){
     super(p);
     this.state = {
       todos: [],
-      todo:{}
+      todo:{},
+      //testa Context-API:et
+      nightMode: false,
     };
     this.handleFormGetSubmit = this.handleFormGetSubmit.bind(this);
     this.handleFormPostSubmit = this.handleFormPostSubmit.bind(this);
+  }
+
+  //testa Context-API:et
+  handleChangeNightMode() {
+    this.setState({nightMode: !this.state.nightMode});
   }
 
   async handleFormGetSubmit( todoId ) {
@@ -45,8 +55,11 @@ export class App extends React.Component {
 
   render() {
       return ( 
-          <div>
+        <NightModeContext.Provider value={{nightMode: this.state.nightMode}}>
+          <div className={this.state.nightMode ? 'night' : ''}>
             <ErrorBoundary>
+            {/* testa Context-API:et */}
+              <ChangeThemeButton handleChangeNightMode={this.handleChangeNightMode.bind(this)}/>
             <BurgerNav />
             <FooterNav >
               <Route exact path='/'>
@@ -69,7 +82,8 @@ export class App extends React.Component {
             </ FooterNav>
             </ErrorBoundary>
           </div>
-          );
+        </NightModeContext.Provider>
+        );
       }
 }
 
