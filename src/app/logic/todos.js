@@ -1,5 +1,3 @@
-import { ErrorBoundary } from "./error-boundary";
-
 export async function POSTtodo(toDoName) {
     // TODO: Ta fler inputs för tex Type och StudyTime
     const newToDoObj = {
@@ -20,7 +18,6 @@ export async function POSTtodo(toDoName) {
     } catch (error) {
         console.log(error);
     }
-     
 }
 
 export async function GETtodo(toDoId) {
@@ -54,7 +51,6 @@ export async function DELETEtodo(toDoId) {
         method: 'DELETE'
         });
         const data = await res.json();
-        
         return data;
     } catch (error) {
         console.log(error);
