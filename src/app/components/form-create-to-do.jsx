@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AppContext } from "../logic/create-context.js";
 
 export class FormCreateToDo extends React.Component {
   constructor(p){
@@ -16,7 +17,7 @@ export class FormCreateToDo extends React.Component {
             <label>
                 <input placeholder="Skriv att-göra..." value={this.state.todoInput} onChange={(e) => this.setState({todoInput: e.target.value})} />
             </label>
-            <button onClick={() => this.props.onPostSubmit(this.state.todoInput)}>Skapa att-göra</button>
+            <button onClick={() => this.context.onPostSubmit(this.state.todoInput)}>Skapa att-göra</button>
           </form>
           <br/>
           {/* TODO: Skriv ut komponent som skapas */}
@@ -25,6 +26,8 @@ export class FormCreateToDo extends React.Component {
     }
   }
 
+  FormCreateToDo.contextType = AppContext;
+
 FormCreateToDo.propTypes = {
-  onPostSubmit: PropTypes.func.isRequired
+  onPostSubmit: PropTypes.func
 };

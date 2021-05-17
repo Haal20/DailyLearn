@@ -14,7 +14,7 @@ import { GameMapView } from './components/game-map-view.jsx';
 import { StudyTipsView } from './components/study-tips-view.jsx';
 import { ListAllToDo } from './components/list-all-to-do.jsx';
 //import context
-import { NightModeContext } from './logic/create-context.js';
+import { AppContext } from './logic/create-context.js';
 import { ChangeThemeButton } from './components/change-theme-button.jsx';
 
 export class App extends React.Component {
@@ -23,16 +23,15 @@ export class App extends React.Component {
     this.state = {
       todos: [],
       todo:{},
-      //testa Context-API:et
       nightMode: false,
     };
-    this.handleFormGetSubmit = this.handleFormGetSubmit.bind(this);
-    this.handleFormPostSubmit = this.handleFormPostSubmit.bind(this);
   }
 
   //testa Context-API:et
   handleChangeNightMode() {
-    this.setState({nightMode: !this.state.nightMode});
+    this.setState({
+      nightMode: !this.state.nightMode,
+    });
   }
 
   async handleFormGetSubmit( todoId ) {
@@ -55,19 +54,24 @@ export class App extends React.Component {
 
   render() {
       return ( 
-        <NightModeContext.Provider value={{nightMode: this.state.nightMode}}>
+        <AppContext.Provider value={{
+          nightMode: this.state.nightMode, 
+          changeNightMode: this.handleChangeNightMode.bind(this),
+          onGetSubmit: this.handleFormGetSubmit.bind(this),
+          todo: this.state.todo,
+          todos: this.state.todos,
+          onPostSubmit: this.handleFormPostSubmit.bind(this)
+        }}>
           <div className={this.state.nightMode ? 'night' : ''}>
             <ErrorBoundary>
             {/* testa Context-API:et */}
-              <ChangeThemeButton handleChangeNightMode={this.handleChangeNightMode.bind(this)}/>
+              <ChangeThemeButton />
             <BurgerNav />
             <FooterNav >
               <Route exact path='/'>
                 <ToDoView>
-                  <FormGetToDo 
-                    onGetSubmit = {this.handleFormGetSubmit}
-                    todo = {this.state.todo} />
-                  <ListAllToDo todos={this.state.todos} />
+                  <FormGetToDo />
+                  <ListAllToDo />
                 </ToDoView>
               </Route>
               <Route path='/gameMap'>
@@ -75,14 +79,13 @@ export class App extends React.Component {
               </Route>
               <Route path='/studyTips'>
                 <StudyTipsView>
-                <FormCreateToDo 
-                    onPostSubmit = {this.handleFormPostSubmit} />
+                <FormCreateToDo />
                 </ StudyTipsView>
               </Route>
             </ FooterNav>
             </ErrorBoundary>
           </div>
-        </NightModeContext.Provider>
+        </AppContext.Provider>
         );
       }
 }

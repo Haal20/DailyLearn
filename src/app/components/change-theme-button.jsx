@@ -1,5 +1,5 @@
 import React from "react";
-import { NightModeContext } from "../logic/create-context.js";
+import { AppContext } from "../logic/create-context.js";
 
 
 export class ChangeThemeButton extends React.Component{
@@ -8,13 +8,12 @@ export class ChangeThemeButton extends React.Component{
     }
 
     render(){
-        this.context // nightMode: true: false
         return (
             <div className={'themeButton'}>
-                <button onClick={this.props.handleChangeNightMode}>kväll?</button>
+                <button onClick={this.context.changeNightMode}>kväll?</button>
             </div>
         );
     }
 }
 
-ChangeThemeButton.contextType = NightModeContext;
+ChangeThemeButton.contextType = AppContext;

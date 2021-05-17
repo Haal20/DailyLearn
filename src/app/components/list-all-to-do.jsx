@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {ToDoObject} from './to-do-object.jsx';
+import { AppContext } from "../logic/create-context.js";
 
 export class ListAllToDo extends React.Component {
   constructor(p){
       super(p);
   }
   render() {
-      const todos = this.props.todos;
+      const todos = this.context.todos;
     return (
       <div>
           <ul>
@@ -21,6 +22,8 @@ export class ListAllToDo extends React.Component {
     );
   }
 }
+
+ListAllToDo.contextType = AppContext;
 
 ListAllToDo.propTypes = {
   todos: PropTypes.array
