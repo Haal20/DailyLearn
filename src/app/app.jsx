@@ -3,7 +3,7 @@ import  ReactDOM from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
 // Logic Error && Handling
 import { ErrorBoundary } from './logic/error-boundary.jsx';
-import { GETtodos, GETtodo, POSTtodo } from './logic/todos.js';
+import { GETtodos, GETtodo, POSTtodo, DELETEtodo } from './logic/todos.js';
 // Component rendering
 import { FooterNav } from './components/footer-nav.jsx';
 import { BurgerNav } from './components/burger-nav.jsx';
@@ -16,6 +16,7 @@ import { ListAllToDo } from './components/list-all-to-do.jsx';
 //import context
 import { AppContext } from './logic/create-context.js';
 import { ChangeThemeButton } from './components/change-theme-button.jsx';
+import { ToDoObject } from './components/to-do-object.jsx';
 
 export class App extends React.Component {
   constructor(p){
@@ -27,7 +28,6 @@ export class App extends React.Component {
     };
   }
 
-  //testa Context-API:et
   handleChangeNightMode() {
     this.setState({
       nightMode: !this.state.nightMode,
@@ -47,6 +47,12 @@ export class App extends React.Component {
     // TODO: Clears Placeholder in input
   }
 
+  async handleFormDeleteSubmit(Id) {
+    //DeleteOne
+    await DELETEtodo(Id)
+    // TODO: Clears Placeholder in input
+  }
+
   async componentDidMount(){
     const todos = await GETtodos();
     this.setState({todos});
@@ -60,18 +66,22 @@ export class App extends React.Component {
           onGetSubmit: this.handleFormGetSubmit.bind(this),
           todo: this.state.todo,
           todos: this.state.todos,
-          onPostSubmit: this.handleFormPostSubmit.bind(this)
+          onPostSubmit: this.handleFormPostSubmit.bind(this),
+          onDeleteSubmit: this.handleFormDeleteSubmit.bind(this)
         }}>
           <div className={this.state.nightMode ? 'night' : ''}>
             <ErrorBoundary>
-            {/* testa Context-API:et */}
+            <BurgerNav>
               <ChangeThemeButton />
-            <BurgerNav />
+              <h1 className='dayOfWeek'>MÅNDAG</h1>
+            </ BurgerNav>
             <FooterNav >
               <Route exact path='/'>
                 <ToDoView>
                   <FormGetToDo />
-                  <ListAllToDo />
+                  <ListAllToDo>
+                    <ToDoObject />
+                  </ ListAllToDo>
                 </ToDoView>
               </Route>
               <Route path='/gameMap'>

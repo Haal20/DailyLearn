@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "./error-boundary";
 
 export async function POSTtodo(toDoName) {
     // TODO: Ta fler inputs för tex Type och StudyTime
@@ -8,7 +9,7 @@ export async function POSTtodo(toDoName) {
         completed: false
     };
 
-    try{
+    try {
     const res = await fetch( 'https://retoolapi.dev/SY5MJp/homework', {  
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -16,7 +17,7 @@ export async function POSTtodo(toDoName) {
         });
         await res.json();
         return GETtodos();
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
      
@@ -24,17 +25,39 @@ export async function POSTtodo(toDoName) {
 
 export async function GETtodo(toDoId) {
 
-    const res = await fetch(`https://retoolapi.dev/SY5MJp/homework/${toDoId}`);
-    const data = await res.json();
-
-    return data
+    try {
+        const res = await fetch(`https://retoolapi.dev/SY5MJp/homework/${toDoId}`);
+        const data = await res.json();
+    
+        return data   
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
 export async function GETtodos() {
 
-    const res = await fetch(`https://retoolapi.dev/SY5MJp/homework`);
-    const data = await res.json();
+    try {
+        const res = await fetch(`https://retoolapi.dev/SY5MJp/homework`);
+        const data = await res.json();
 
-    return data
+        return data   
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function DELETEtodo(toDoId) {
+    try {
+    const res = await fetch( 'https://retoolapi.dev/SY5MJp/homework/' + toDoId , {  
+        method: 'DELETE'
+        });
+        const data = await res.json();
+        
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+     
 }
