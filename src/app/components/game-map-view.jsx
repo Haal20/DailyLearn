@@ -5,6 +5,10 @@ export class GameMapView extends React.Component {
     render() {
       return (
         <div>
+          <br />
+          <br />
+          <br />
+          <br />
           <img src={image} />
         </div>
       );

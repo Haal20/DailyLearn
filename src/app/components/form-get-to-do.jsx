@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ToDoObject } from './to-do-object.jsx';
+import { AppContext } from "../logic/create-context.js";
 
 export class FormGetToDo extends React.Component {
   constructor(p){
@@ -17,12 +18,12 @@ export class FormGetToDo extends React.Component {
             <label>
               <input placeholder="Skriv id..." value={this.state.todoInput} onChange={(e) => this.setState({todoInput: e.target.value})} />
             </label>
-            <button onClick={() => this.props.onGetSubmit(this.state.todoInput)}> Hämta att-göra </button>
+            <button onClick={() => this.context.onGetSubmit(this.state.todoInput)}> Hämta att-göra </button>
           </div>
           Att-göra du hämtade: 
         <br/>
         <ul>
-          <ToDoObject todo={this.props.todo}/>
+          <ToDoObject todo={this.context.todo}/>
         </ul>
         <br/>
         </div>
@@ -30,7 +31,8 @@ export class FormGetToDo extends React.Component {
     }
   }
 
+
+FormGetToDo.contextType = AppContext;
+
 FormGetToDo.propTypes = {
-  todo: PropTypes.object,
-  onGetSubmit: PropTypes.func.isRequired
 };

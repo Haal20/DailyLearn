@@ -14,8 +14,37 @@
     width: 100%;
     background-color: aliceblue;
 }
+.burgerNav {
+    position: fixed;
+    width: 100%;
+    background-color: aliceblue;
+    padding-left: 10px;
+}
 
 .footerBtn {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.error {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.night {
+    background-color: black;
+    color: blanchedalmond;
+}
+
+.themeButton {
+    text-align: right;
+}
+
+.todoObj {
+    border-style: groove;
+    margin: 5px 20px 5px 20px;
+}
+
+.dayOfWeek {
+    text-align: center;
 }

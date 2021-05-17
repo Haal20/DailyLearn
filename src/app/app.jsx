@@ -1,27 +1,37 @@
-import React from 'react';
+import React , { createContext } from 'react';
 import  ReactDOM from 'react-dom';
+import { HashRouter, Route } from 'react-router-dom';
+// Logic Error && Handling
+import { ErrorBoundary } from './logic/error-boundary.jsx';
+import { GETtodos, GETtodo, POSTtodo, DELETEtodo } from './logic/todos.js';
+// Component rendering
 import { FooterNav } from './components/footer-nav.jsx';
 import { BurgerNav } from './components/burger-nav.jsx';
-import { GETtodos, GETtodo, POSTtodo } from './logic/todos.js';
-import { HashRouter } from 'react-router-dom';
 import { FormGetToDo } from './components/form-get-to-do';
 import { FormCreateToDo } from './components/form-create-to-do';
 import { ToDoView } from './components/to-do-view.jsx';
 import { GameMapView } from './components/game-map-view.jsx';
 import { StudyTipsView } from './components/study-tips-view.jsx';
-import { Route } from "react-router-dom";
 import { ListAllToDo } from './components/list-all-to-do.jsx';
-import { ErrorBoundary } from './logic/error-boundary.jsx';
+//import context
+import { AppContext } from './logic/create-context.js';
+import { ChangeThemeButton } from './components/change-theme-button.jsx';
+import { ToDoObject } from './components/to-do-object.jsx';
 
 export class App extends React.Component {
   constructor(p){
     super(p);
     this.state = {
       todos: [],
-      todo:{}
+      todo:{},
+      nightMode: false,
     };
-    this.handleFormGetSubmit = this.handleFormGetSubmit.bind(this);
-    this.handleFormPostSubmit = this.handleFormPostSubmit.bind(this);
+  }
+
+  handleChangeNightMode() {
+    this.setState({
+      nightMode: !this.state.nightMode,
+    });
   }
 
   async handleFormGetSubmit( todoId ) {
@@ -37,6 +47,12 @@ export class App extends React.Component {
     // TODO: Clears Placeholder in input
   }
 
+  async handleFormDeleteSubmit(Id) {
+    //DeleteOne
+    await DELETEtodo(Id)
+    // TODO: Clears Placeholder in input
+  }
+
   async componentDidMount(){
     const todos = await GETtodos();
     this.setState({todos});
@@ -44,15 +60,28 @@ export class App extends React.Component {
 
   render() {
       return ( 
-          <div>
-            <BurgerNav />
+        <AppContext.Provider value={{
+          nightMode: this.state.nightMode, 
+          changeNightMode: this.handleChangeNightMode.bind(this),
+          onGetSubmit: this.handleFormGetSubmit.bind(this),
+          todo: this.state.todo,
+          todos: this.state.todos,
+          onPostSubmit: this.handleFormPostSubmit.bind(this),
+          onDeleteSubmit: this.handleFormDeleteSubmit.bind(this)
+        }}>
+          <div className={this.state.nightMode ? 'night' : ''}>
+            <ErrorBoundary>
+            <BurgerNav>
+              <ChangeThemeButton />
+              <h1 className='dayOfWeek'>MÅNDAG</h1>
+            </ BurgerNav>
             <FooterNav >
               <Route exact path='/'>
                 <ToDoView>
-                  <FormGetToDo 
-                    onGetSubmit = {this.handleFormGetSubmit}
-                    todo = {this.state.todo} />
-                  <ListAllToDo todos={this.state.todos} />
+                  <FormGetToDo />
+                  <ListAllToDo>
+                    <ToDoObject />
+                  </ ListAllToDo>
                 </ToDoView>
               </Route>
               <Route path='/gameMap'>
@@ -60,14 +89,15 @@ export class App extends React.Component {
               </Route>
               <Route path='/studyTips'>
                 <StudyTipsView>
-                <FormCreateToDo 
-                    onPostSubmit = {this.handleFormPostSubmit} />
+                <FormCreateToDo />
                 </ StudyTipsView>
               </Route>
             </ FooterNav>
+            </ErrorBoundary>
           </div>
-          );
+        </AppContext.Provider>
+        );
       }
 }
 
-ReactDOM.render(<ErrorBoundary><HashRouter><App /></HashRouter></ErrorBoundary>, document.getElementById('root'))
+ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'))
