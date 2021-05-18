@@ -42,19 +42,24 @@ export class App extends React.Component {
 
   async handleFormPostSubmit(type, name, time) {
     //PostOne
-    await POSTtodo(type, name, time)
-    // TODO: Clears Placeholder in input
+    await POSTtodo(type, name, time);
+    this.updateTodos();
+ 
   }
 
   async handleFormDeleteSubmit(Id) {
     //DeleteOne
-    await DELETEtodo(Id)
-    // TODO: uppdatera
+    await DELETEtodo(Id);
+    this.updateTodos();
+  }
+
+  async updateTodos(){
+    const todos = await GETtodos();
+    this.setState({todos});
   }
 
   async componentDidMount(){
-    const todos = await GETtodos();
-    this.setState({todos});
+    this.updateTodos();
   }
 
   render() {
@@ -66,30 +71,35 @@ export class App extends React.Component {
           todo: this.state.todo,
           todos: this.state.todos,
           onPostSubmit: this.handleFormPostSubmit.bind(this),
-          onDeleteSubmit: this.handleFormDeleteSubmit.bind(this)
+          onDeleteSubmit: this.handleFormDeleteSubmit.bind(this),
+          updateTodos: this.updateTodos.bind(this),
         }}>
           <div className={this.state.nightMode ? 'night' : ''}>
             <ErrorBoundary>
-            <BurgerNav>
-              <ChangeThemeButton />
-              <h1 className='dayOfWeek'>MÅNDAG</h1>
-            </ BurgerNav>
-            <FooterNav >
-              <Route exact path='/'>
-                <ToDoView>
-                  <FormGetToDo />
-                  <ListAllToDo />
-                </ToDoView>
-              </Route>
-              <Route path='/gameMap'>
-                <GameMapView/>
-              </Route>
-              <Route path='/studyTips'>
-                <StudyTipsView>
-                <FormCreateToDo />
-                </ StudyTipsView>
-              </Route>
-            </ FooterNav>
+              <BurgerNav>
+                <ChangeThemeButton />
+                <h1 className='dayOfWeek'>MÅNDAG</h1>
+              </ BurgerNav>
+              <FooterNav >
+                <Route exact path='/'>
+                  <ToDoView>
+                    <FormGetToDo />
+                    <ErrorBoundary>
+                      <ListAllToDo />
+                    </ErrorBoundary>
+                  </ToDoView>
+                </Route>
+                <Route path='/gameMap'>
+                  <GameMapView/>
+                </Route>
+                <Route path='/studyTips'>
+                  <StudyTipsView>
+                  <FormCreateToDo />
+                  </ StudyTipsView>
+                </Route>
+                <Route path='/todo/:id' 
+                component={ToDoObjectExtended} />
+              </ FooterNav>
             </ErrorBoundary>
           </div>
         </AppContext.Provider>

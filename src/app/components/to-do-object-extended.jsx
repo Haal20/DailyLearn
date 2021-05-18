@@ -9,8 +9,12 @@ export class ToDoObjectExtended extends React.Component {
     render() {
         return (
             <div className='todoObjExtended'>
-                <p>ytterliggare information om ett todo objekt</p>
-                <button onClick={() => this.props.onDeleteSubmit(this.props.todo.id)}>Radera</button>
+                <br />
+                <br />
+                <br />
+                <br />
+                <p>ytterliggare information om todo objekt {this.props.match.params.id} </p>
+                <button onClick={() => this.context.onDeleteSubmit(this.props.match.params.id)}>Radera</button>
             </div>
         );
     }

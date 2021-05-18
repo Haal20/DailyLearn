@@ -15,6 +15,7 @@
     background-color: aliceblue;
 }
 .burgerNav {
+    padding-top: 10px;
     position: fixed;
     width: 100%;
     background-color: aliceblue;
@@ -38,6 +39,7 @@
 
 .themeButton {
     text-align: right;
+    padding-right: 10px;
 }
 
 .todoObj {

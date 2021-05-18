@@ -12,7 +12,7 @@ export class FormCreateToDo extends React.Component {
   }
 
   handeOnClick(){
-    this.props.onPostSubmit(this.state.type, this.state.name, this.state.time);
+    this.context.onPostSubmit(this.state.type, this.state.name, this.state.time);
     this.setState({type:'', name:'', time:''});
   }
 
@@ -20,7 +20,7 @@ export class FormCreateToDo extends React.Component {
       return (
         <div>
           Skapa ny att-göra (skriv vad som behövs göras)
-          <form onSubmit={this.props.onPostSubmit}>
+          <form onSubmit={this.context.onPostSubmit}>
             <label>
               <p>Uppgifts typ: </p><input placeholder="Skriv typ av uppgift..." value={this.state.type} onChange={(e) => this.setState({type: e.target.value})} />
             </label>
