@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-    Route,
-    Link
-  } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 //fontAwesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
@@ -116,3 +114,7 @@ export class BurgerNav extends React.Component {
         );
     }
 }
+
+BurgerNav.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.element)
+};

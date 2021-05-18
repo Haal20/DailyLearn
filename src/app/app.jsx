@@ -13,10 +13,10 @@ import { ToDoView } from './components/to-do-view.jsx';
 import { GameMapView } from './components/game-map-view.jsx';
 import { StudyTipsView } from './components/study-tips-view.jsx';
 import { ListAllToDo } from './components/list-all-to-do.jsx';
+import { ToDoObjectExtended } from './components/to-do-object-extended.jsx';
 //import context
 import { AppContext } from './logic/create-context.js';
 import { ChangeThemeButton } from './components/change-theme-button.jsx';
-import { ToDoObject } from './components/to-do-object.jsx';
 
 export class App extends React.Component {
   constructor(p){
@@ -38,19 +38,18 @@ export class App extends React.Component {
     // Gets a singel todo Object
     const todoObj = await GETtodo(todoId);
     this.setState({todo: todoObj});
-    // TODO: Clears Placeholder in input
   }
 
-  async handleFormPostSubmit(todoInput) {
+  async handleFormPostSubmit(type, name, time) {
     //PostOne
-    await POSTtodo(todoInput)
+    await POSTtodo(type, name, time)
     // TODO: Clears Placeholder in input
   }
 
   async handleFormDeleteSubmit(Id) {
     //DeleteOne
     await DELETEtodo(Id)
-    // TODO: Clears Placeholder in input
+    // TODO: uppdatera
   }
 
   async componentDidMount(){
@@ -79,9 +78,7 @@ export class App extends React.Component {
               <Route exact path='/'>
                 <ToDoView>
                   <FormGetToDo />
-                  <ListAllToDo>
-                    <ToDoObject />
-                  </ ListAllToDo>
+                  <ListAllToDo />
                 </ToDoView>
               </Route>
               <Route path='/gameMap'>

@@ -18,7 +18,7 @@ export class ToDoObject extends React.Component {
                         study time: {this.props.todo.StudyTime}<br />
                         completed: {this.props.todo.completed? 'ja':'nej'} <br />
                     </Link>
-                    <button onClick={() => this.context.onDeleteSubmit(this.props.todo.id)}>Radera</button>
+                    <button onClick={() => this.props.onDeleteSubmit(this.props.todo.id)}>Radera</button>
                 </li>
             </div>
         );

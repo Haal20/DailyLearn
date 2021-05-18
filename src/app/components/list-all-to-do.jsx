@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {ToDoObject} from './to-do-object.jsx';
 import { AppContext } from "../logic/create-context.js";
-import { Route } from 'react-router-dom';
 
 export class ListAllToDo extends React.Component {
   constructor(p){
@@ -26,7 +24,3 @@ export class ListAllToDo extends React.Component {
 }
 
 ListAllToDo.contextType = AppContext;
-
-ListAllToDo.propTypes = {
-  todos: PropTypes.array
-};

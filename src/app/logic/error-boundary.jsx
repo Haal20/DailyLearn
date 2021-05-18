@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBug } from '@fortawesome/free-solid-svg-icons';
 
@@ -32,3 +33,7 @@ export class ErrorBoundary extends React.Component {
         return this.props.children; 
     }
 }
+
+ErrorBoundary.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.element)
+};
