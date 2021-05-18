@@ -78,28 +78,27 @@ export class App extends React.Component {
             <ErrorBoundary>
               <BurgerNav>
                 <ChangeThemeButton />
-                <h1 className='dayOfWeek'>MÅNDAG</h1>
+                <h1 className='dayOfWeek'>ONSDAG</h1>
               </ BurgerNav>
-              <FooterNav >
-                <Route exact path='/'>
-                  <ToDoView>
-                    <FormGetToDo />
-                    <ErrorBoundary>
-                      <ListAllToDo />
-                    </ErrorBoundary>
-                  </ToDoView>
-                </Route>
-                <Route path='/gameMap'>
-                  <GameMapView/>
-                </Route>
-                <Route path='/studyTips'>
-                  <StudyTipsView>
-                  <FormCreateToDo />
-                  </ StudyTipsView>
-                </Route>
-                <Route path='/todo/:id' 
+              <Route exact path='/'>
+                <ToDoView>
+                  <FormGetToDo />
+                  <ErrorBoundary>
+                    <ListAllToDo />
+                  </ErrorBoundary>
+                </ToDoView>
+              </Route>
+              <Route path='/gameMap'>
+                <GameMapView/>
+              </Route>
+              <Route path='/studyTips'>
+                <StudyTipsView>
+                <FormCreateToDo />
+                </ StudyTipsView>
+              </Route>
+              <Route path='/todo/:id' 
                 component={ToDoObjectExtended} />
-              </ FooterNav>
+              <FooterNav />
             </ErrorBoundary>
           </div>
         </AppContext.Provider>

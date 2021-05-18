@@ -8,7 +8,7 @@ export class ToDoObjectExtended extends React.Component {
     }
     render() {
         return (
-            <div className='todoObjExtended'>
+            <div className='createForm'>
                 <br />
                 <br />
                 <br />

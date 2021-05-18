@@ -1,5 +1,5 @@
 export async function POSTtodo(type, name, time) {
-    // TODO: Ta fler inputs för tex Type och StudyTime
+
     const newToDoObj = {
         assignmentName: name,
         assignmentType: type,
@@ -17,6 +17,7 @@ export async function POSTtodo(type, name, time) {
         return GETtodos();
     } catch (error) {
         console.log(error);
+        // TODO: Är denna error hantering okej?
     }
 }
 

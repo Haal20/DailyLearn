@@ -15,9 +15,6 @@ export class FooterNav extends React.Component{
         return(
         <div>
             <nav>
-            <div className="footerContent">
-                {this.props.children}
-            </div>
             <div className="footerNav">
                 <Link className="footerBtn" to='/'>
                     <span className="icon">

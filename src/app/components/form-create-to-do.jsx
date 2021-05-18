@@ -18,7 +18,7 @@ export class FormCreateToDo extends React.Component {
 
     render() {
       return (
-        <div>
+        <div className="createForm">
           Skapa ny att-göra (skriv vad som behövs göras)
           <form onSubmit={this.context.onPostSubmit}>
             <label>
