@@ -6,6 +6,9 @@ import { ConfirmButton } from '../common/confirm-button.jsx';
 export class ToDoObjectExtended extends React.Component {
     constructor(p){
         super(p);
+        this.state = {
+            confirmed: false,
+        }
     }
 
     componentDidMount(){
@@ -21,8 +24,20 @@ export class ToDoObjectExtended extends React.Component {
         return (
             <div className='createForm'>
                 <p>{this.context.todo.id}<br />Detta är ytterliggare information om {this.context.todo.assignmentName} ({this.context.todo.assignmentType})</p><br/>
-                <button onClick={() => this.context.onDeleteSubmit(this.props.match.params.id)}>Radera</button>
-                <ConfirmButton btnText="RaderaConfirmed" question="Är du säker?"  onClick={() => this.context.onDeleteSubmit(this.props.match.params.id)} />
+                
+                <ConfirmButton 
+                btnText="Radera" 
+                question="Är du säker?"  
+                handleClick={(val) => {
+                    if(val === 'Ja'){
+                    this.context.onDeleteSubmit(this.props.match.params.id)
+                }else if(val === 'confirmed'){
+                    this.setState({confirmed: true});
+                }else{
+                    this.setState({confirmed: false});
+                }}}
+                confirmed = {this.state.confirmed} />
+
             </div>
         );
     }

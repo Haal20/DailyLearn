@@ -49,13 +49,14 @@ export class App extends React.Component {
     //PostOne
     await POSTtodo(type, name, time);
     this.updateTodos();
- 
+    window.location = '/app.html?#';
   }
 
   async handleFormDeleteSubmit(Id) {
     //DeleteOne
     await DELETEtodo(Id);
     this.updateTodos();
+    window.location = '/app.html?#';
   }
 
   async updateTodos(){
