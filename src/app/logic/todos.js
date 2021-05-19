@@ -17,7 +17,6 @@ export async function POSTtodo(type, name, time) {
         return GETtodos();
     } catch (error) {
         console.log(error);
-        // TODO: Är denna error hantering okej?
     }
 }
 

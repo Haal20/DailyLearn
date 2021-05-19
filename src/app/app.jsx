@@ -37,7 +37,12 @@ export class App extends React.Component {
   async handleFormGetSubmit( todoId ) {
     // Gets a singel todo Object
     const todoObj = await GETtodo(todoId);
-    this.setState({todo: todoObj});
+      if(todoObj == undefined){
+        //error
+      }else{
+      this.setState({todo: todoObj});
+    }
+
   }
 
   async handleFormPostSubmit(type, name, time) {
@@ -74,8 +79,8 @@ export class App extends React.Component {
           onDeleteSubmit: this.handleFormDeleteSubmit.bind(this),
           updateTodos: this.updateTodos.bind(this),
         }}>
+          <ErrorBoundary>
           <div className={this.state.nightMode ? 'night' : ''}>
-            <ErrorBoundary>
               <BurgerNav>
                 <ChangeThemeButton />
                 <h1 className='dayOfWeek'>ONSDAG</h1>
@@ -99,8 +104,8 @@ export class App extends React.Component {
               <Route path='/todo/:id' 
                 component={ToDoObjectExtended} />
               <FooterNav />
-            </ErrorBoundary>
           </div>
+          </ErrorBoundary>
         </AppContext.Provider>
         );
       }
