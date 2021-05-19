@@ -7,11 +7,7 @@ export class ToDoView extends React.Component {
   }
     render() {
       return (
-        <div>
-          <br />
-          <br />
-          <br />
-          <br />
+        <div className='createForm'>
           {this.props.children}
         </div>
       );

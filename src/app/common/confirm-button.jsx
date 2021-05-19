@@ -8,26 +8,31 @@ export class ConfirmButton extends React.Component {
         }
     }
 
+    handleClick(){
+        this.props.onClick();
+        this.setState({confirmed:false});
+    }
+
     render() {
-        if(this.state.confirm != true){
+         if(this.state.confirm != true){ 
             return( 
             <div>
-                <button onClick={() => {this.setState({confirmed: true})}}>
+                <button onClick={() => {this.setState({confirmed:true})}}>
                     {this.props.btnText}
                 </button>
             </div>
             );
-        }
-        return(
+         } 
+         return(
         <div>
             <p>{this.props.question}</p>
-            <button onClick={(e) => { this.props.onClick(e), this.setState({confirmed:false})}}>
+            <button onClick={() => this.handleClick.bind(this)}>
                 Yes
             </button>
             <button onClick={() => {this.setState({confirmed:false})}}>
                 No
             </button>
         </div>
-        );
+        ); 
     }
 }

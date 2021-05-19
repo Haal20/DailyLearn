@@ -37,7 +37,7 @@ export class FormCreateToDo extends React.Component {
             </div>
           </form>
           <br/>
-          {/* TODO: Skriv ut komponent som skapas */}
+          {/* TODO: Skriv ut komponent som skapas ex med conditional rendering */}
         </div>
       );
     }

@@ -16,8 +16,6 @@ export class ListAllToDo extends React.Component {
               </div>
               ))}
           </ul>
-          <br/>
-          <br/>
       </div>
     );
   }

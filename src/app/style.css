@@ -2,6 +2,10 @@
 
 .createForm {
     text-align: center;
+    padding-top: 20vh;
+}
+
+.burgerContent{
     padding-top: 30vh;
 }
 

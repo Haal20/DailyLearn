@@ -44,8 +44,8 @@ export class BurgerNav extends React.Component {
                     </span>
                 </button>
                 {this.props.children}
+                
                 <div id="navMenu" className="navbar-menu is-active">
-              
                 <div>
                     <nav>
                     <div className="burgerNav">
@@ -75,11 +75,6 @@ export class BurgerNav extends React.Component {
                         </ul>
                     </div>
                     <div className="burgerContent">
-                   <br />
-                   <br />
-                   <br />
-                   <br />
-                   <br />
                         <Route path='/aboutUs'>
                             <AboutUs/>
                         </Route>
@@ -92,8 +87,7 @@ export class BurgerNav extends React.Component {
                 
                     </div>
                     </nav>
-                    </div>
-                   
+                </div>
                 </div>
             </div>
            
