@@ -2,7 +2,7 @@ import React , { createContext } from 'react';
 import  ReactDOM from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
 // Logic Error && Handling
-import { ErrorBoundary } from './logic/error-boundary.jsx';
+import { ErrorBoundary } from './common/error-boundary.jsx';
 import { GETtodos, GETtodo, POSTtodo, DELETEtodo } from './logic/todos.js';
 // Component rendering
 import { FooterNav } from './components/footer-nav.jsx';
@@ -38,7 +38,7 @@ export class App extends React.Component {
     // Gets a singel todo Object
     const todoObj = await GETtodo(todoId);
       if(todoObj == undefined){
-        //error
+        // TODO: error
       }else{
       this.setState({todo: todoObj});
     }
