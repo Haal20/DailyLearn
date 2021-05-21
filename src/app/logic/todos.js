@@ -1,3 +1,5 @@
+import { url } from './api-url.js'
+
 export async function POSTtodo(type, name, time) {
 
     const newToDoObj = {
@@ -8,7 +10,7 @@ export async function POSTtodo(type, name, time) {
     };
 
     try {
-    const res = await fetch( 'https://retoolapi.dev/SY5MJp/homework', {  
+    const res = await fetch( url , {  
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newToDoObj)
@@ -23,7 +25,7 @@ export async function POSTtodo(type, name, time) {
 export async function GETtodo(toDoId) {
 
     try {
-        const res = await fetch(`https://retoolapi.dev/SY5MJp/homework/${toDoId}`);
+        const res = await fetch( url + toDoId);
         const data = await res.json();
     
         return data   
@@ -36,7 +38,7 @@ export async function GETtodo(toDoId) {
 export async function GETtodos() {
 
     try {
-        const res = await fetch(`https://retoolapi.dev/SY5MJp/homework`);
+        const res = await fetch( url );
         const data = await res.json();
 
         return data   
@@ -47,7 +49,7 @@ export async function GETtodos() {
 
 export async function DELETEtodo(toDoId) {
     try {
-    const res = await fetch( 'https://retoolapi.dev/SY5MJp/homework/' + toDoId , {  
+    const res = await fetch( url + toDoId , {  
         method: 'DELETE'
         });
         const data = await res.json();
