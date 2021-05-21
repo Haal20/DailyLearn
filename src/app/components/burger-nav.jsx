@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-    Route,
-    Link
-  } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 //fontAwesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
@@ -46,8 +44,8 @@ export class BurgerNav extends React.Component {
                     </span>
                 </button>
                 {this.props.children}
+                
                 <div id="navMenu" className="navbar-menu is-active">
-              
                 <div>
                     <nav>
                     <div className="burgerNav">
@@ -77,11 +75,6 @@ export class BurgerNav extends React.Component {
                         </ul>
                     </div>
                     <div className="burgerContent">
-                   <br />
-                   <br />
-                   <br />
-                   <br />
-                   <br />
                         <Route path='/aboutUs'>
                             <AboutUs/>
                         </Route>
@@ -94,8 +87,7 @@ export class BurgerNav extends React.Component {
                 
                     </div>
                     </nav>
-                    </div>
-                   
+                </div>
                 </div>
             </div>
            
@@ -116,3 +108,7 @@ export class BurgerNav extends React.Component {
         );
     }
 }
+
+BurgerNav.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.element)
+};

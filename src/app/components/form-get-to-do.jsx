@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { ToDoObject } from './to-do-object.jsx';
 import { AppContext } from "../logic/create-context.js";
 
 export class FormGetToDo extends React.Component {
@@ -13,7 +11,7 @@ export class FormGetToDo extends React.Component {
     render() {
       return (
         <div>
-          Hämta att-göra med id (nummer mellan 1-25):
+          {/* Hämta att-göra med id (nummer mellan 1-25):
           <div>
             <label>
               <input placeholder="Skriv id..." value={this.state.todoInput} onChange={(e) => this.setState({todoInput: e.target.value})} />
@@ -24,8 +22,7 @@ export class FormGetToDo extends React.Component {
         <br/>
         <ul>
           <ToDoObject todo={this.context.todo}/>
-        </ul>
-        <br/>
+        </ul> */}
         </div>
       );
     }
@@ -33,6 +30,3 @@ export class FormGetToDo extends React.Component {
 
 
 FormGetToDo.contextType = AppContext;
-
-FormGetToDo.propTypes = {
-};

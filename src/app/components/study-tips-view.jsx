@@ -8,10 +8,6 @@ export class StudyTipsView extends React.Component {
     render() {
       return (
         <div>
-          <br />
-          <br />
-          <br />
-          <br />
           {this.props.children}
         </div>
       );

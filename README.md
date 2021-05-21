@@ -58,5 +58,6 @@ Jag använder API:et i:
 rad 30 för att hämta todo med hjälp av id;
 rad 37 för att skapa ny todo; 
 rad 42 för att hämta alla todos.
+rad 50 för att hämta radera todo
 # todo.js 
 rad 11, 26, 35 för att skapa logiken för ovanstående funktioner.

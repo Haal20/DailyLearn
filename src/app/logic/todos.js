@@ -1,9 +1,9 @@
-export async function POSTtodo(toDoName) {
-    // TODO: Ta fler inputs för tex Type och StudyTime
+export async function POSTtodo(type, name, time) {
+
     const newToDoObj = {
-        assignmentName: toDoName,
-        assignmentType: 'prov',
-        StudyTime:15,
+        assignmentName: name,
+        assignmentType: type,
+        StudyTime: time,
         completed: false
     };
 
