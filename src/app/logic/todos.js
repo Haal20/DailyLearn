@@ -1,40 +1,61 @@
+import { url } from './api-url.js'
 
-export async function POSTtodo(toDoName) {
-    // TODO: Ta fler inputs för tex Type och StudyTime
+export async function POSTtodo(type, name, time) {
+
     const newToDoObj = {
-        assignmentName: toDoName,
-        assignmentType: 'prov',
-        StudyTime:15,
+        assignmentName: name,
+        assignmentType: type,
+        StudyTime: time,
         completed: false
     };
 
-    try{
-    const res = await fetch( 'https://retoolapi.dev/SY5MJp/homework', {  
+    try {
+    const res = await fetch( url , {  
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newToDoObj)
         });
         await res.json();
         return GETtodos();
-    }catch(error){
-        console.log(error);
+    } catch (error) {
+        return error;
     }
-     
 }
 
 export async function GETtodo(toDoId) {
 
-    const res = await fetch(`https://retoolapi.dev/SY5MJp/homework/${toDoId}`);
-    const data = await res.json();
-
-    return data
+    try {
+        const res = await fetch( url + toDoId);
+        const data = await res.json();
+    
+        return data   
+    } catch (error) {
+        return error;
+    }
 }
 
 
 export async function GETtodos() {
 
-    const res = await fetch(`https://retoolapi.dev/SY5MJp/homework`);
-    const data = await res.json();
+    try {
+        const res = await fetch( url );
+        const data = await res.json();
 
-    return data
+        return data   
+    } catch (error) {
+        return error;
+    }
+}
+
+export async function DELETEtodo(toDoId) {
+    try {
+    const res = await fetch( url + toDoId , {  
+        method: 'DELETE'
+        });
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        return error;
+    }
+     
 }

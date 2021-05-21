@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class StudyTipsView extends React.Component {
   constructor(p){
@@ -13,4 +14,6 @@ export class StudyTipsView extends React.Component {
     }
 }
    
-  
+StudyTipsView.propTypes = {
+  children: PropTypes.element
+};

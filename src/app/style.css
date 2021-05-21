@@ -1,7 +1,12 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 
-.footerContent {
+.createForm {
     text-align: center;
+    padding-top: 20vh;
+}
+
+.burgerContent{
+    padding-top: 30vh;
 }
 
 .footerNav {
@@ -14,8 +19,40 @@
     width: 100%;
     background-color: aliceblue;
 }
+.burgerNav {
+    padding-top: 10px;
+    position: fixed;
+    width: 100%;
+    background-color: aliceblue;
+    padding-left: 10px;
+}
 
 .footerBtn {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.error {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.night {
+    background-color:#282c34;
+    color: blanchedalmond;
+}
+
+.themeButton {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.todoObj {
+    text-align: center;
+    border-style: groove;
+    margin: 5px 20px 5px 20px;
+}
+
+.dayOfWeek {
+    text-align: center;
 }
