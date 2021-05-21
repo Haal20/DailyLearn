@@ -16,7 +16,7 @@ export async function POSTtodo(type, name, time) {
         await res.json();
         return GETtodos();
     } catch (error) {
-        console.log(error);
+        return error;
     }
 }
 
@@ -28,7 +28,7 @@ export async function GETtodo(toDoId) {
     
         return data   
     } catch (error) {
-        console.log(error);
+        return error;
     }
 }
 
@@ -41,7 +41,7 @@ export async function GETtodos() {
 
         return data   
     } catch (error) {
-        console.log(error);
+        return error;
     }
 }
 
@@ -53,7 +53,7 @@ export async function DELETEtodo(toDoId) {
         const data = await res.json();
         return data;
     } catch (error) {
-        console.log(error);
+        return error;
     }
      
 }

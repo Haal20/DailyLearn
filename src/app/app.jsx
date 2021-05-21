@@ -38,7 +38,13 @@ export class App extends React.Component {
     // Gets a singel todo Object
     const todoObj = await GETtodo(todoId);
       if(todoObj == undefined){
-        // TODO: error
+        // errorObject
+        errorObj = {
+          assignmentName: 'Hittade inget...',
+          assignmentType: 'Hittade inget...',
+          StudyTime: 'Oidentifierad...',
+        }
+        this.setState({todo: errorObj});
       }else{
       this.setState({todo: todoObj});
     }
