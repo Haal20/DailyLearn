@@ -1,0 +1,1 @@
+export const url = 'https://retoolapi.dev/SY5MJp/homework/';
