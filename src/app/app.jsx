@@ -89,8 +89,8 @@ export class App extends React.Component {
           <ErrorBoundary>
           <div className={this.state.nightMode ? 'night' : ''}>
               <BurgerNav>
-                <ChangeThemeButton />
-                <h1 className='dayOfWeek'>ONSDAG</h1>
+                {/* <ChangeThemeButton /> */}
+                <h1 className='dayOfWeek'>MÅNDAG</h1>
               </ BurgerNav>
               <Route exact path='/'>
                 <ToDoView>
